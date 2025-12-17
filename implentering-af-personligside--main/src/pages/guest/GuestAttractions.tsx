@@ -164,7 +164,7 @@ const GuestAttractions = () => {
                   className="gap-2 text-muted-foreground"
                   onClick={() => window.open(attraction.events_url, '_blank')}
                 >
-                  {language === 'da' ? 'Se events' : 'See events'}
+                  {language === 'da' ? 'Se events' : language === 'de' ? 'Events ansehen' : language === 'nl' ? 'Evenementen bekijken' : 'See events'}
                 </Button>
               </div>
             </div>
@@ -178,7 +178,7 @@ const GuestAttractions = () => {
     <div className="bg-white min-h-screen">
       <PageHeader 
         title={language === 'da' ? 'Attraktioner' : language === 'de' ? 'Attraktionen' : language === 'nl' ? 'Attracties' : 'Attractions'}
-        subtitle={language === 'da' ? 'Oplevelser i nærheden af Jelling' : 'Experiences near Jelling'}
+        subtitle={language === 'da' ? 'Oplevelser i nærheden af Jelling' : language === 'de' ? 'Erlebnisse in der Nähe von Jelling' : language === 'nl' ? 'Ervaringen in de buurt van Jelling' : 'Experiences near Jelling'}
         image={HEADER_IMAGE}
       />
       
@@ -189,6 +189,8 @@ const GuestAttractions = () => {
           <p className="text-sm text-blue-800">
             {language === 'da' 
               ? 'Alle attraktioner er inden for 50 km fra Jelling Camping. Klik "Find vej" for rutevejledning fra campingpladsen.'
+              : language === 'de' ? 'Alle Attraktionen sind innerhalb von 50 km vom Jelling Camping. Klicken Sie auf "Route" für die Wegbeschreibung vom Campingplatz.'
+              : language === 'nl' ? 'Alle attracties liggen binnen 50 km van Jelling Camping. Klik op "Routebeschrijving" voor de route vanaf de camping.'
               : 'All attractions are within 50 km from Jelling Camping. Click "Directions" for route guidance from the campsite.'}
           </p>
         </div>
@@ -212,6 +214,8 @@ const GuestAttractions = () => {
         <p className="text-xs text-center text-muted-foreground pt-4">
           {language === 'da' 
             ? '↗ Alle links åbner i nye vinduer. Tjek hjemmesider for aktuelle åbningstider og priser.'
+            : language === 'de' ? '↗ Alle Links öffnen in neuen Fenstern. Überprüfen Sie die Websites für aktuelle Öffnungszeiten und Preise.'
+            : language === 'nl' ? '↗ Alle links openen in nieuwe vensters. Controleer websites voor actuele openingstijden en prijzen.'
             : '↗ All links open in new windows. Check websites for current opening hours and prices.'}
         </p>
       </div>

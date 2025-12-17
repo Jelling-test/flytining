@@ -62,8 +62,9 @@ const GuestPlayground = () => {
     fetchSettings();
   }, []);
 
-  const getText = (da: string, en: string, de: string) => {
+  const getText = (da: string, en: string, de: string, nl?: string) => {
     if (language === 'de') return de;
+    if (language === 'nl') return nl || en;
     if (language === 'en') return en;
     return da;
   };
@@ -85,8 +86,8 @@ const GuestPlayground = () => {
   return (
     <div className="bg-white min-h-screen">
       <PageHeader 
-        title={getText('Legeplads', 'Playground', 'Spielplatz')}
-        subtitle={getText('Sjov for hele familien', 'Fun for the whole family', 'Spaß für die ganze Familie')}
+        title={getText('Legeplads', 'Playground', 'Spielplatz', 'Speeltuin')}
+        subtitle={getText('Sjov for hele familien', 'Fun for the whole family', 'Spaß für die ganze Familie', 'Plezier voor het hele gezin')}
         image={settings.header_image || DEFAULT_HEADER}
       />
 
@@ -176,7 +177,7 @@ const GuestPlayground = () => {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <TreePine className="h-5 w-5 text-green-600" />
-              {getText('Øvrige faciliteter', 'Other facilities', 'Weitere Einrichtungen')}
+              {getText('Øvrige faciliteter', 'Other facilities', 'Weitere Einrichtungen', 'Overige faciliteiten')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -196,7 +197,7 @@ const GuestPlayground = () => {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <MapPin className="h-5 w-5 text-green-600" />
-              {getText('Placering', 'Location', 'Standort')}
+              {getText('Placering', 'Location', 'Standort', 'Locatie')}
             </CardTitle>
           </CardHeader>
           <CardContent>

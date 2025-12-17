@@ -1,0 +1,245 @@
+version: 4
+mqtt:
+  base_topic: zigbee2mqtt_area5
+  server: mqtt://mosquitto:1883
+  user: homeassistant
+  password: 7200Grindsted!
+serial:
+  port: tcp://192.168.0.95:6638
+  adapter: ember
+  baudrate: 115200
+  rtscts: false
+advanced:
+  log_level: info
+  channel: 11
+  network_key:
+    - 220
+    - 154
+    - 132
+    - 20
+    - 68
+    - 108
+    - 201
+    - 239
+    - 148
+    - 122
+    - 61
+    - 172
+    - 160
+    - 227
+    - 224
+    - 222
+  pan_id: 18824
+  ext_pan_id:
+    - 30
+    - 74
+    - 238
+    - 117
+    - 11
+    - 117
+    - 239
+    - 16
+  last_seen: ISO_8601
+frontend:
+  enabled: true
+  port: 8080
+  title: Område 400
+homeassistant:
+  enabled: true
+onboarding: false
+availability:
+  enabled: true
+  active:
+    timeout: 10
+    max_jitter: 30000
+    backoff: true
+    pause_on_backoff_gt: 15
+  passive:
+    timeout: 1500
+devices:
+  '0x180df9fffe9a51a9':
+    friendly_name: repeater - plads 434
+  '0x180df9fffe345906':
+    friendly_name: repeater - plads 422
+  '0xc09b9efffed117a8':
+    friendly_name: repeater - plads 406
+  '0x781c9dfffee436cb':
+    friendly_name: Blå hytte 1
+  '0xbc8d7efffe218c6e':
+    friendly_name: Blå hyttec2
+  '0xbc8d7efffe218787':
+    friendly_name: Blå hytte 3
+  '0xbc8d7efffe217b3b':
+    friendly_name: '303'
+  '0x781c9dfffee436ae':
+    friendly_name: '304'
+  '0xbc8d7efffe14c17a':
+    friendly_name: '305'
+  '0xbc8d7efffe302dd4':
+    friendly_name: '308'
+  '0xbc8d7efffe214f6f':
+    friendly_name: '307'
+  '0xbc8d7efffe21fac0':
+    friendly_name: '306'
+  '0xbc8d7efffe226539':
+    friendly_name: '309'
+  '0xbc8d7efffe12fb2a':
+    friendly_name: '310'
+  '0x781c9dfffee441ec':
+    friendly_name: '311'
+  '0xbc8d7efffe13d0fc':
+    friendly_name: '369'
+  '0x781c9dfffee44da9':
+    friendly_name: '371'
+  '0xbc8d7efffe149c07':
+    friendly_name: '370'
+  '0xbc8d7efffe149d67':
+    friendly_name: '373'
+  '0xbc8d7efffe133071':
+    friendly_name: '374'
+  '0x781c9dfffee44d54':
+    friendly_name: '372'
+  '0xbc8d7efffe21afa1':
+    friendly_name: '314'
+  '0xbc8d7efffe149f63':
+    friendly_name: '315'
+  '0xbc8d7efffe2259fe':
+    friendly_name: '316'
+  '0xbc8d7efffe14c763':
+    friendly_name: '319'
+  '0xbc8d7efffe12e713':
+    friendly_name: '320'
+  '0xbc8d7efffe3073e3':
+    friendly_name: '321'
+  '0xbc8d7efffe151ea1':
+    friendly_name: '326'
+  '0xbc8d7efffe148af0':
+    friendly_name: '313'
+  '0xbc8d7efffe12cf2f':
+    friendly_name: '312'
+  '0xbc8d7efffe14e37c':
+    friendly_name: '318'
+  '0xbc8d7efffe21bb30':
+    friendly_name: '317'
+  '0xbc8d7efffe14977a':
+    friendly_name: '325'
+  '0xbc8d7efffe21832c':
+    friendly_name: '327'
+  '0xbc8d7efffe2144c6':
+    friendly_name: '328'
+  '0xbc8d7efffe21a51c':
+    friendly_name: '329'
+  '0xbc8d7efffe21ed5c':
+    friendly_name: '323'
+  '0xbc8d7efffe130950':
+    friendly_name: '322'
+  '0xbc8d7efffe13313d':
+    friendly_name: '324'
+  '0xbc8d7efffe151cbf':
+    friendly_name: 313,2
+  '0xbc8d7efffe303d3e':
+    friendly_name: '330'
+  '0xbc8d7efffe21b0eb':
+    friendly_name: '331'
+  '0xbc8d7efffe225a0f':
+    friendly_name: '332'
+  '0xbc8d7efffe1572f6':
+    friendly_name: '333'
+  '0xbc8d7efffe151424':
+    friendly_name: '334'
+  '0xbc8d7efffe2f89c1':
+    friendly_name: '335'
+  '0x781c9dfffee44bba':
+    friendly_name: '336'
+  '0xbc8d7efffe14a6ec':
+    friendly_name: '344'
+  '0xbc8d7efffe15770d':
+    friendly_name: '343'
+  '0xbc8d7efffe21781d':
+    friendly_name: '345'
+  '0xbc8d7efffe12da06':
+    friendly_name: 318,2
+  '0xbc8d7efffe12c200':
+    friendly_name: '375'
+  '0xbc8d7efffe155e14':
+    friendly_name: '376'
+  '0xbc8d7efffe12c233':
+    friendly_name: '377'
+  '0xbc8d7efffe2f87b1':
+    friendly_name: '378'
+  '0x781c9dfffee45010':
+    friendly_name: '379'
+  '0xbc8d7efffe12cde6':
+    friendly_name: '380'
+  '0xbc8d7efffe14ac08':
+    friendly_name: '341'
+  '0xbc8d7efffe21c695':
+    friendly_name: '342'
+  '0xbc8d7efffe14bb3e':
+    friendly_name: '349'
+  '0xbc8d7efffe149f65':
+    friendly_name: '338'
+  '0xbc8d7efffe151b00':
+    friendly_name: '339'
+  '0xbc8d7efffe14b009':
+    friendly_name: '346'
+  '0xbc8d7efffe151e8b':
+    friendly_name: '340'
+  '0xbc8d7efffe21e808':
+    friendly_name: '347'
+  '0xbc8d7efffe2f8bbf':
+    friendly_name: '348'
+  '0xbc8d7efffe215a9b':
+    friendly_name: F55
+  '0xbc8d7efffe14d5ef':
+    friendly_name: F54
+  '0xbc8d7efffe12fb16':
+    friendly_name: F47
+  '0x781c9dfffee44d79':
+    friendly_name: F51
+  '0xbc8d7efffe21b029':
+    friendly_name: F52
+  '0xbc8d7efffe14c95b':
+    friendly_name: F35
+  '0xbc8d7efffe14aa0b':
+    friendly_name: '359'
+  '0xbc8d7efffe1338a8':
+    friendly_name: '360'
+  '0x781c9dfffee44d68':
+    friendly_name: '361'
+  '0xbc8d7efffe216212':
+    friendly_name: '353'
+  '0x781c9dfffee43d98':
+    friendly_name: '354'
+  '0xbc8d7efffe131cb7':
+    friendly_name: '355'
+  '0xbc8d7efffe1484bc':
+    friendly_name: '362'
+  '0xbc8d7efffe152506':
+    friendly_name: '363'
+  '0xbc8d7efffe14a3ac':
+    friendly_name: '364'
+  '0xbc8d7efffe12d0e6':
+    friendly_name: '365'
+  '0xbc8d7efffe1310fa':
+    friendly_name: '366'
+  '0xbc8d7efffe14cca2':
+    friendly_name: '367'
+  '0x781c9dfffee44da2':
+    friendly_name: '350'
+  '0xbc8d7efffe12ebc4':
+    friendly_name: '351'
+  '0xbc8d7efffe2189ff':
+    friendly_name: '352'
+  '0x781c9dfffee436c8':
+    friendly_name: '356'
+  '0xbc8d7efffe13fbeb':
+    friendly_name: '357'
+  '0xbc8d7efffe1531ff':
+    friendly_name: '358'
+  '0xbc8d7efffe21606c':
+    friendly_name: '381'
+  '0xbc8d7efffe147249':
+    friendly_name: '382'
+  '0xbc8d7efffe329167':
+    friendly_name: '368'

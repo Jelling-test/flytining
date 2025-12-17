@@ -63,8 +63,14 @@ interface Transport {
 interface Facility {
   id: string;
   name: string;
+  name_en?: string;
+  name_de?: string;
+  name_nl?: string;
   icon: string;
   info: string;
+  info_en?: string;
+  info_de?: string;
+  info_nl?: string;
 }
 
 const GuestPractical = () => {
@@ -116,7 +122,7 @@ const GuestPractical = () => {
     <div className="bg-white min-h-screen">
       <PageHeader 
         title={t('practicalInfo')}
-        subtitle={language === 'da' ? 'Alt du har brug for at vide' : 'Everything you need to know'}
+        subtitle={language === 'da' ? 'Alt du har brug for at vide' : language === 'de' ? 'Alles was Sie wissen müssen' : language === 'nl' ? 'Alles wat u moet weten' : 'Everything you need to know'}
         image={info?.header_image || DEFAULT_HEADER}
       />
       
@@ -139,7 +145,7 @@ const GuestPractical = () => {
                     language === 'nl' ? 'Open netwerk - geen wachtwoord' : 
                     'Open network - no password'
                   ) : (
-                    language === 'da' ? `Kodeord: ${info.wifi_password}` : `Password: ${info.wifi_password}`
+                    language === 'da' ? `Kodeord: ${info.wifi_password}` : language === 'de' ? `Passwort: ${info.wifi_password}` : language === 'nl' ? `Wachtwoord: ${info.wifi_password}` : `Password: ${info.wifi_password}`
                   )}
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
@@ -267,8 +273,8 @@ const GuestPractical = () => {
                         <IconComponent className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <p className="font-medium text-sm">{facility.name}</p>
-                        <p className="text-xs text-muted-foreground">{facility.info}</p>
+                        <p className="font-medium text-sm">{language === 'en' ? (facility.name_en || facility.name) : language === 'de' ? (facility.name_de || facility.name) : language === 'nl' ? (facility.name_nl || facility.name_en || facility.name) : facility.name}</p>
+                        <p className="text-xs text-muted-foreground">{language === 'en' ? (facility.info_en || facility.info) : language === 'de' ? (facility.info_de || facility.info) : language === 'nl' ? (facility.info_nl || facility.info_en || facility.info) : facility.info}</p>
                       </div>
                     </CardContent>
                   </Card>

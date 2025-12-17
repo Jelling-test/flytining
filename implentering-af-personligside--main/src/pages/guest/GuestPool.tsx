@@ -57,8 +57,9 @@ const GuestPool = () => {
     fetchSettings();
   }, []);
 
-  const getText = (da: string, en: string, de: string) => {
+  const getText = (da: string, en: string, de: string, nl?: string) => {
     if (language === 'de') return de;
+    if (language === 'nl') return nl || en;
     if (language === 'en') return en;
     return da;
   };
@@ -78,8 +79,8 @@ const GuestPool = () => {
   return (
     <div className="bg-white min-h-screen">
       <PageHeader 
-        title={getText('Jelling Friluftsbad', 'Jelling Outdoor Pool', 'Jelling Freibad')}
-        subtitle={getText('Fri adgang for alle gæster', 'Free access for all guests', 'Freier Eintritt für alle Gäste')}
+        title={getText('Jelling Friluftsbad', 'Jelling Outdoor Pool', 'Jelling Freibad', 'Jelling Buitenbad')}
+        subtitle={getText('Fri adgang for alle gæster', 'Free access for all guests', 'Freier Eintritt für alle Gäste', 'Gratis toegang voor alle gasten')}
         image={settings.header_image || DEFAULT_HEADER}
       />
 
@@ -109,7 +110,7 @@ const GuestPool = () => {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Clock className="h-5 w-5 text-teal-600" />
-              {getText('Åbningstider 2025', 'Opening Hours 2025', 'Öffnungszeiten 2025')}
+              {getText('Åbningstider 2025', 'Opening Hours 2025', 'Öffnungszeiten 2025', 'Openingstijden 2025')}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -118,7 +119,7 @@ const GuestPool = () => {
             {/* Morgensvømning */}
             <div className="border-b pb-4">
               <h4 className="font-medium mb-2">
-                {getText('Morgensvømning', 'Morning Swim', 'Morgenschwimmen')}
+                {getText('Morgensvømning', 'Morning Swim', 'Morgenschwimmen', 'Ochtendzwemmen')}
               </h4>
               <p className="text-gray-600">{settings.morning_swim_time}</p>
             </div>
@@ -130,11 +131,11 @@ const GuestPool = () => {
               </h4>
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
-                  <span className="text-gray-500">{getText('Hverdage', 'Weekdays', 'Wochentage')}:</span>
+                  <span className="text-gray-500">{getText('Hverdage', 'Weekdays', 'Wochentage', 'Weekdagen')}:</span>
                   <span className="ml-2 font-medium text-orange-600">{settings.period1_weekdays}</span>
                 </div>
                 <div>
-                  <span className="text-gray-500">{getText('Weekend', 'Weekend', 'Wochenende')}:</span>
+                  <span className="text-gray-500">{getText('Weekend', 'Weekend', 'Wochenende', 'Weekend')}:</span>
                   <span className="ml-2 font-medium text-orange-600">{settings.period1_weekend}</span>
                 </div>
               </div>
@@ -146,7 +147,7 @@ const GuestPool = () => {
                 {settings.period2_label}: {settings.period2_dates}
               </h4>
               <div className="text-sm">
-                <span className="text-gray-500">{getText('Alle dage', 'Every day', 'Alle Tage')}:</span>
+                <span className="text-gray-500">{getText('Alle dage', 'Every day', 'Alle Tage', 'Alle dagen')}:</span>
                 <span className="ml-2 font-medium text-orange-600">{settings.period2_everyday}</span>
               </div>
             </div>
@@ -156,7 +157,7 @@ const GuestPool = () => {
               <div className="flex items-center gap-2 text-amber-600 bg-amber-50 p-3 rounded-lg">
                 <AlertCircle className="h-5 w-5" />
                 <span className="text-sm font-medium">
-                  {getText('Lukket', 'Closed', 'Geschlossen')} {settings.closed_dates}
+                  {getText('Lukket', 'Closed', 'Geschlossen', 'Gesloten')} {settings.closed_dates}
                 </span>
               </div>
             )}
@@ -168,7 +169,7 @@ const GuestPool = () => {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <MapPin className="h-5 w-5 text-teal-600" />
-              {getText('Placering', 'Location', 'Standort')}
+              {getText('Placering', 'Location', 'Standort', 'Locatie')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -180,7 +181,7 @@ const GuestPool = () => {
               <a href={settings.external_url} target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" className="gap-2">
                   <ExternalLink className="h-4 w-4" />
-                  {getText('Se mere på vejle.dk', 'See more at vejle.dk', 'Mehr auf vejle.dk')}
+                  {getText('Se mere på vejle.dk', 'See more at vejle.dk', 'Mehr auf vejle.dk', 'Meer op vejle.dk')}
                 </Button>
               </a>
             )}

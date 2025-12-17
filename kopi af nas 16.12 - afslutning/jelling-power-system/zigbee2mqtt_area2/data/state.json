@@ -1,0 +1,331 @@
+{
+    "0xbc8d7efffe1572a3": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0.03
+    },
+    "0xbc8d7efffe21a327": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0.03
+    },
+    "0x403059fffeda40d5": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0.06
+    },
+    "0xbc8d7efffe12e5db": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "energy": 0.02
+    },
+    "0xbc8d7efffe2144c0": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0.01
+    },
+    "0xbc8d7efffe14c18f": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0
+    },
+    "0xbc8d7efffe14ac01": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "energy": 0.01
+    },
+    "0x781c9dfffee43f05": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0.01
+    },
+    "0x781c9dfffee44ba1": {
+        "power": 0,
+        "current": 0,
+        "state": "OFF",
+        "voltage": 237,
+        "energy": 2.16
+    },
+    "0xbc8d7efffe32996d": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0
+    },
+    "0xbc8d7efffe2fba61": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "energy": 0
+    },
+    "0xbc8d7efffe2fa585": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 235,
+        "energy": 0.01
+    },
+    "0xbc8d7efffe2188c4": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0.01
+    },
+    "0x781c9dfffee44d99": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "energy": 0.01
+    },
+    "0xbc8d7efffe12e5a4": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0
+    },
+    "0xbc8d7efffe14167a": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "energy": 0
+    },
+    "0xbc8d7efffe2fab94": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "energy": 0
+    },
+    "0xbc8d7efffe13110e": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0.01
+    },
+    "0x781c9dfffee44398": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "energy": 0.01
+    },
+    "0xbc8d7efffe304816": {
+        "power": 1115,
+        "state": "ON",
+        "current": 4.75,
+        "voltage": 234,
+        "energy": 270.48
+    },
+    "0xbc8d7efffe131787": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "energy": 0.01
+    },
+    "0xbc8d7efffe12397a": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0.01
+    },
+    "0xbc8d7efffe14dd25": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "energy": 0.01
+    },
+    "0xbc8d7efffe14de69": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0.02
+    },
+    "0xbc8d7efffe216d9f": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "energy": 0.02
+    },
+    "0xbc8d7efffe15359e": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "energy": 0.01
+    },
+    "0xbc8d7efffe12e2a8": {
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0.01,
+        "state": "OFF"
+    },
+    "0x781c9dfffee447c1": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "energy": 0.01
+    },
+    "0xbc8d7efffe14bdd4": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "energy": 0.01
+    },
+    "0xbc8d7efffe2fbd4a": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "energy": 0.01
+    },
+    "0xbc8d7efffe14b589": {
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "state": "OFF",
+        "energy": 0.01
+    },
+    "0xbc8d7efffe21a2ce": {
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "state": "OFF",
+        "energy": 0.01
+    },
+    "0xbc8d7efffe131215": {
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "state": "OFF",
+        "energy": 0
+    },
+    "0xbc8d7efffe2fc5bd": {
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "state": "OFF",
+        "energy": 0
+    },
+    "0xbc8d7efffe12f0a1": {
+        "power": 0,
+        "current": 0,
+        "voltage": 234,
+        "state": "OFF",
+        "energy": 0
+    },
+    "0xbc8d7efffe148e64": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0
+    },
+    "0x781c9dfffee44952": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0
+    },
+    "0xbc8d7efffe15119c": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0.01
+    },
+    "0xbc8d7efffe133110": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0.01
+    },
+    "0x781c9dfffee44bb3": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0.01
+    },
+    "0x781c9dfffee44906": {
+        "energy": 0,
+        "power": 0,
+        "current": 0,
+        "state": "OFF",
+        "voltage": 237
+    },
+    "0xbc8d7efffe217b1e": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0.01
+    },
+    "0xbc8d7efffe158fad": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0
+    },
+    "0xbc8d7efffe213d3a": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "energy": 0.01
+    },
+    "0xbc8d7efffe132396": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0.01
+    },
+    "0xbc8d7efffe156ace": {
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "state": "OFF",
+        "energy": 0.01
+    },
+    "0x781c9dfffee43f19": {
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "state": "OFF",
+        "energy": 0.01
+    }
+}

@@ -1,0 +1,712 @@
+{
+    "0xdc8e95fffe93cb6f": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 235,
+        "energy": 5.62,
+        "last_seen": "2025-12-16T20:54:52.866Z",
+        "linkquality": 128
+    },
+    "0xdc8e95fffe93c2f7": {
+        "state": "ON",
+        "power": 0,
+        "current": 0,
+        "voltage": 235,
+        "energy": 395.64,
+        "last_seen": "2025-12-16T20:54:53.227Z",
+        "linkquality": 76
+    },
+    "0xdc8e95fffe93c512": {
+        "state": "ON",
+        "energy": 864.81,
+        "power": 103,
+        "current": 0.67,
+        "voltage": 233,
+        "last_seen": "2025-12-16T20:54:44.124Z",
+        "linkquality": 136
+    },
+    "0xbc8d7efffe21ab04": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0.23,
+        "last_seen": "2025-12-16T20:54:58.550Z",
+        "linkquality": 128
+    },
+    "0xbc8d7efffe14c42b": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 235,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:51.657Z",
+        "linkquality": 168
+    },
+    "0xbc8d7efffe131bc1": {
+        "power": 679,
+        "current": 2.91,
+        "state": "ON",
+        "voltage": 233,
+        "energy": 129.38,
+        "last_seen": "2025-12-16T20:55:04.212Z",
+        "linkquality": 128
+    },
+    "0xbc8d7efffe301c8d": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "last_seen": "2025-12-16T20:54:51.963Z",
+        "linkquality": 168,
+        "energy": 0
+    },
+    "0xbc8d7efffe21b384": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 235,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:50.524Z",
+        "linkquality": 128
+    },
+    "0xbc8d7efffe21b947": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0.01,
+        "last_seen": "2025-12-16T20:55:05.243Z",
+        "linkquality": 116
+    },
+    "0x781c9dfffee43968": {
+        "energy": 0,
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "last_seen": "2025-12-16T20:55:16.493Z",
+        "linkquality": 148
+    },
+    "0xbc8d7efffe1568f3": {
+        "state": "ON",
+        "power": 14,
+        "current": 0.11,
+        "voltage": 235,
+        "energy": 4.98,
+        "last_seen": "2025-12-16T20:54:50.890Z",
+        "linkquality": 88
+    },
+    "0x781c9dfffee43d50": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:58.398Z",
+        "linkquality": 132
+    },
+    "0xbc8d7efffe2137ff": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "last_seen": "2025-12-16T20:54:47.380Z",
+        "linkquality": 128,
+        "energy": 0
+    },
+    "0xbc8d7efffe217787": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "last_seen": "2025-12-16T20:54:55.203Z",
+        "linkquality": 128,
+        "energy": 0
+    },
+    "0xbc8d7efffe2fa268": {
+        "current": 0,
+        "power": 0,
+        "energy": 0.01,
+        "state": "OFF",
+        "voltage": 237,
+        "last_seen": "2025-12-16T20:55:04.881Z",
+        "linkquality": 140
+    },
+    "0xbc8d7efffe225e3c": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:59.934Z",
+        "linkquality": 128
+    },
+    "0xbc8d7efffe309701": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:56.481Z",
+        "linkquality": 132
+    },
+    "0xbc8d7efffe30262a": {
+        "voltage": 237,
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:01.284Z",
+        "linkquality": 128
+    },
+    "0xbc8d7efffe21808a": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 234,
+        "last_seen": "2025-12-16T20:54:57.616Z",
+        "linkquality": 128,
+        "energy": 0
+    },
+    "0xbc8d7efffe2fa07b": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:00.647Z",
+        "linkquality": 132
+    },
+    "0x781c9dfffee436d5": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0.01,
+        "last_seen": "2025-12-16T20:54:51.093Z",
+        "linkquality": 128
+    },
+    "0xbc8d7efffe158e85": {
+        "state": "ON",
+        "power": 0,
+        "current": 0,
+        "voltage": 235,
+        "energy": 72.29,
+        "last_seen": "2025-12-16T20:54:50.518Z",
+        "linkquality": 152
+    },
+    "0xbc8d7efffe14ccfe": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:04.605Z",
+        "linkquality": 120
+    },
+    "0xbc8d7efffe2f9374": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:53.339Z",
+        "linkquality": 152
+    },
+    "0xbc8d7efffe130f9c": {
+        "power": 0,
+        "current": 0,
+        "voltage": 234,
+        "state": "OFF",
+        "last_seen": "2025-12-16T20:54:51.718Z",
+        "linkquality": 144,
+        "energy": 0
+    },
+    "0xbc8d7efffe13fef0": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "last_seen": "2025-12-16T20:54:51.486Z",
+        "linkquality": 112,
+        "energy": 0
+    },
+    "0xbc8d7efffe215a8b": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "last_seen": "2025-12-16T20:55:11.049Z",
+        "linkquality": 148,
+        "energy": 0
+    },
+    "0xbc8d7efffe21ab2e": {
+        "power": 0,
+        "current": 0,
+        "voltage": 233,
+        "state": "OFF",
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:54.075Z",
+        "linkquality": 136
+    },
+    "0xbc8d7efffe13d0b1": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:54.957Z",
+        "linkquality": 132
+    },
+    "0xbc8d7efffe303a74": {
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "state": "OFF",
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:09.005Z",
+        "linkquality": 128
+    },
+    "0x781c9dfffee4398c": {
+        "power": 28,
+        "current": 0.3,
+        "voltage": 237,
+        "state": "ON",
+        "energy": 25.69,
+        "last_seen": "2025-12-16T20:54:59.634Z",
+        "linkquality": 112
+    },
+    "0xbc8d7efffe21a98b": {
+        "power": 0,
+        "current": 0,
+        "voltage": 235,
+        "state": "OFF",
+        "last_seen": "2025-12-16T20:55:09.752Z",
+        "linkquality": 124,
+        "energy": 0
+    },
+    "0xbc8d7efffe3059cf": {
+        "power": 0,
+        "current": 0,
+        "voltage": 235,
+        "state": "OFF",
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:25.897Z",
+        "linkquality": 100
+    },
+    "0xbc8d7efffe218c63": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "last_seen": "2025-12-16T20:55:12.604Z",
+        "linkquality": 152,
+        "energy": 0
+    },
+    "0xbc8d7efffe15483e": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:18.936Z",
+        "linkquality": 144
+    },
+    "0xbc8d7efffe214dff": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "last_seen": "2025-12-16T20:55:09.211Z",
+        "linkquality": 124,
+        "energy": 0
+    },
+    "0xbc8d7efffe32915c": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:19.230Z",
+        "linkquality": 120
+    },
+    "0xbc8d7efffe12cdd7": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:28.913Z",
+        "linkquality": 88
+    },
+    "0xbc8d7efffe217403": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "last_seen": "2025-12-16T20:55:07.310Z",
+        "linkquality": 172,
+        "energy": 0.01
+    },
+    "0xbc8d7efffe12c38c": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:02.151Z",
+        "linkquality": 124
+    },
+    "0xbc8d7efffe1337e1": {
+        "energy": 0,
+        "power": 0,
+        "current": 0,
+        "state": "OFF",
+        "voltage": 238,
+        "last_seen": "2025-12-16T20:55:18.780Z",
+        "linkquality": 112
+    },
+    "0xbc8d7efffe1524fd": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:08.144Z",
+        "linkquality": 124
+    },
+    "0xbc8d7efffe3063d1": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 235,
+        "last_seen": "2025-12-16T20:55:00.394Z",
+        "linkquality": 124,
+        "energy": 0
+    },
+    "0xbc8d7efffe215e8b": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "last_seen": "2025-12-16T20:54:56.114Z",
+        "linkquality": 124,
+        "energy": 0
+    },
+    "0xbc8d7efffe1310f0": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:10.443Z",
+        "linkquality": 112
+    },
+    "0x781c9dfffee45069": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 231,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:21.519Z",
+        "linkquality": 112
+    },
+    "0xbc8d7efffe21386b": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:10.067Z",
+        "linkquality": 152
+    },
+    "0xbc8d7efffe2163a8": {
+        "power": 0,
+        "current": 0,
+        "voltage": 234,
+        "state": "OFF",
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:52.990Z",
+        "linkquality": 128
+    },
+    "0x781c9dfffee43978": {
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "state": "OFF",
+        "last_seen": "2025-12-16T20:54:59.978Z",
+        "linkquality": 148,
+        "energy": 0
+    },
+    "0xbc8d7efffe14b9fc": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:53.662Z",
+        "linkquality": 124
+    },
+    "0xbc8d7efffe12e3f9": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:11.208Z",
+        "linkquality": 88
+    },
+    "0xbc8d7efffe2fa576": {
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "state": "OFF",
+        "last_seen": "2025-12-16T20:54:27.228Z",
+        "linkquality": 104,
+        "energy": 0
+    },
+    "0xbc8d7efffe216221": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:17.375Z",
+        "linkquality": 148
+    },
+    "0xbc8d7efffe304fcf": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:01.837Z",
+        "linkquality": 124
+    },
+    "0xbc8d7efffe159958": {
+        "state": "ON",
+        "power": 29,
+        "current": 0.37,
+        "voltage": 237,
+        "last_seen": "2025-12-16T20:54:56.137Z",
+        "linkquality": 152,
+        "energy": 8.64
+    },
+    "0xbc8d7efffe2fc292": {
+        "power": 0,
+        "current": 0,
+        "state": "OFF",
+        "voltage": 237,
+        "last_seen": "2025-12-16T20:55:08.121Z",
+        "linkquality": 72,
+        "energy": 0
+    },
+    "0xbc8d7efffe14acf6": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:30.210Z",
+        "linkquality": 100
+    },
+    "0xbc8d7efffe2133f9": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "last_seen": "2025-12-16T20:55:12.138Z",
+        "linkquality": 116,
+        "energy": 0.01
+    },
+    "0xbc8d7efffe14a579": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:11.996Z",
+        "linkquality": 108
+    },
+    "0xbc8d7efffe158fb4": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:08.543Z",
+        "linkquality": 112
+    },
+    "0xbc8d7efffe14b45d": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:18.987Z",
+        "linkquality": 116
+    },
+    "0xbc8d7efffe12cb0e": {
+        "power": 0,
+        "current": 0,
+        "voltage": 235,
+        "energy": 22,
+        "last_seen": "2025-12-16T20:55:00.246Z",
+        "linkquality": 144
+    },
+    "0xbc8d7efffe2158db": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:12.755Z",
+        "linkquality": 136
+    },
+    "0xbc8d7efffe14c5e7": {
+        "power": 0,
+        "current": 0,
+        "voltage": 234,
+        "state": "OFF",
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:23.536Z",
+        "linkquality": 144
+    },
+    "0xbc8d7efffe1331f0": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 234,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:21.653Z",
+        "linkquality": 120
+    },
+    "0xbc8d7efffe14c907": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "last_seen": "2025-12-16T20:55:11.189Z",
+        "linkquality": 116,
+        "energy": 0
+    },
+    "0xbc8d7efffe14c902": {
+        "power": 0,
+        "current": 0,
+        "voltage": 236,
+        "state": "OFF",
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:22.544Z",
+        "linkquality": 92
+    },
+    "0x94b216fffe89148e": {
+        "power": 0,
+        "current": 0,
+        "voltage": 233,
+        "state": "OFF",
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:19.752Z",
+        "linkquality": 144
+    },
+    "0xbc8d7efffe13cf3a": {
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 235,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:55:15.819Z",
+        "linkquality": 120
+    },
+    "0xbc8d7efffe151d91": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "last_seen": "2025-12-16T20:55:18.017Z",
+        "linkquality": 80,
+        "energy": 0
+    },
+    "0xbc8d7efffe1327c6": {
+        "power": 0,
+        "current": 0,
+        "voltage": 235,
+        "state": "OFF",
+        "last_seen": "2025-12-16T20:55:08.409Z",
+        "linkquality": 80,
+        "energy": 0
+    },
+    "0xbc8d7efffe1331f2": {
+        "power": 0,
+        "current": 0,
+        "voltage": 238,
+        "state": "OFF",
+        "last_seen": "2025-12-16T20:54:47.257Z",
+        "linkquality": 120,
+        "energy": 0
+    },
+    "0xbc8d7efffe300c6d": {
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "state": "OFF",
+        "energy": 0.01,
+        "last_seen": "2025-12-16T20:55:20.897Z",
+        "linkquality": 144
+    },
+    "0x781c9dfffee44938": {
+        "energy": 0,
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "last_seen": "2025-12-16T20:54:28.590Z",
+        "linkquality": 88
+    },
+    "0xbc8d7efffe12f5ba": {
+        "voltage": 237,
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:57.173Z",
+        "linkquality": 100
+    },
+    "0xbc8d7efffe158bc0": {
+        "voltage": 236,
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:22.327Z",
+        "linkquality": 124
+    },
+    "0xbc8d7efffe214622": {
+        "energy": 0,
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "voltage": 237,
+        "last_seen": "2025-12-16T20:54:54.742Z",
+        "linkquality": 128
+    },
+    "0xbc8d7efffe21625f": {
+        "voltage": 237,
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "last_seen": "2025-12-16T20:55:00.869Z",
+        "linkquality": 132,
+        "energy": 0
+    },
+    "0xbc8d7efffe218eb1": {
+        "voltage": 234,
+        "state": "OFF",
+        "power": 0,
+        "current": 0,
+        "energy": 0,
+        "last_seen": "2025-12-16T20:54:55.997Z",
+        "linkquality": 92
+    }
+}

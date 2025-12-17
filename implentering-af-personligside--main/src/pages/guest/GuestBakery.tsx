@@ -49,9 +49,11 @@ interface Product {
   name_da: string;
   name_en: string;
   name_de: string;
+  name_nl?: string;
   description_da: string;
   description_en: string;
   description_de: string;
+  description_nl?: string;
   price: number;
   max_per_order: number;
   image_url: string;
@@ -136,12 +138,14 @@ const GuestBakery = () => {
   const getName = (product: Product) => {
     if (language === 'en') return product.name_en || product.name_da;
     if (language === 'de') return product.name_de || product.name_da;
+    if (language === 'nl') return product.name_nl || product.name_en || product.name_da;
     return product.name_da;
   };
 
   const getDescription = (product: Product) => {
     if (language === 'en') return product.description_en || product.description_da;
     if (language === 'de') return product.description_de || product.description_da;
+    if (language === 'nl') return product.description_nl || product.description_en || product.description_da;
     return product.description_da;
   };
 
@@ -324,10 +328,10 @@ const GuestBakery = () => {
             <CardContent className="flex flex-col items-center justify-center py-12 text-center">
               <Lock className="h-12 w-12 text-amber-500 mb-4" />
               <p className="text-gray-800 font-medium mb-2">
-                {language === 'da' ? 'Bageri ikke tilgængeligt' : 'Bakery not available'}
+                {language === 'da' ? 'Bageri ikke tilgængeligt' : language === 'de' ? 'Bäckerei nicht verfügbar' : language === 'nl' ? 'Bakkerij niet beschikbaar' : 'Bakery not available'}
               </p>
               <p className="text-sm text-gray-600">
-                {language === 'da' ? 'Bestilling er tilgængelig efter check-in' : 'Available after check-in'}
+                {language === 'da' ? 'Bestilling er tilgængelig efter check-in' : language === 'de' ? 'Bestellung nach Check-in möglich' : language === 'nl' ? 'Bestellen beschikbaar na check-in' : 'Ordering available after check-in'}
               </p>
             </CardContent>
           </Card>
@@ -342,7 +346,7 @@ const GuestBakery = () => {
       <div className="bg-white min-h-screen">
         <PageHeader 
           title={t('orderBread')}
-          subtitle={language === 'da' ? 'Friske morgenbrød hver dag' : 'Fresh bread every morning'}
+          subtitle={language === 'da' ? 'Friske morgenbrød hver dag' : language === 'de' ? 'Frische Morgenbrötchen jeden Tag' : language === 'nl' ? 'Verse ochtendbroodjes elke dag' : 'Fresh bread every morning'}
           image={HEADER_IMAGE}
         />
         <div className="max-w-2xl mx-auto p-6">
@@ -352,8 +356,8 @@ const GuestBakery = () => {
               <p className="text-gray-800 font-medium mb-2">{getClosedMessage()}</p>
               {settings.closed_until && (
                 <p className="text-sm text-gray-600">
-                  {language === 'da' ? 'Åbner igen: ' : 'Opens again: '}
-                  {new Date(settings.closed_until).toLocaleDateString(language === 'da' ? 'da-DK' : 'en-GB')}
+                  {language === 'da' ? 'Åbner igen: ' : language === 'de' ? 'Öffnet wieder: ' : language === 'nl' ? 'Opent weer: ' : 'Opens again: '}
+                  {new Date(settings.closed_until).toLocaleDateString(language === 'da' ? 'da-DK' : language === 'de' ? 'de-DE' : language === 'nl' ? 'nl-NL' : 'en-GB')}
                 </p>
               )}
             </CardContent>
@@ -368,8 +372,8 @@ const GuestBakery = () => {
     return (
       <div className="bg-white min-h-screen">
         <PageHeader 
-          title={language === 'da' ? 'Bestilling modtaget!' : 'Order received!'}
-          subtitle={`${language === 'da' ? 'Ordrenummer' : 'Order'}: ${showConfirmation.order_number}`}
+          title={language === 'da' ? 'Bestilling modtaget!' : language === 'de' ? 'Bestellung erhalten!' : language === 'nl' ? 'Bestelling ontvangen!' : 'Order received!'}
+          subtitle={`${language === 'da' ? 'Ordrenummer' : language === 'de' ? 'Bestellnummer' : language === 'nl' ? 'Bestelnummer' : 'Order'}: ${showConfirmation.order_number}`}
           image={HEADER_IMAGE}
         />
         <div className="max-w-2xl mx-auto p-6 space-y-6">
@@ -382,17 +386,17 @@ const GuestBakery = () => {
           <Card className="border-0 shadow-lg">
             <CardContent className="p-6 space-y-4">
               <div className="flex justify-between items-center pb-3 border-b">
-                <span className="text-gray-500">{language === 'da' ? 'Afhentning' : 'Pickup'}</span>
+                <span className="text-gray-500">{language === 'da' ? 'Afhentning' : language === 'de' ? 'Abholung' : language === 'nl' ? 'Afhalen' : 'Pickup'}</span>
                 <span className="font-semibold">
                   {settings?.pickup_start_time} - {settings?.pickup_end_time}
                 </span>
               </div>
               <div className="flex justify-between items-center pb-3 border-b">
-                <span className="text-gray-500">{language === 'da' ? 'Sted' : 'Location'}</span>
+                <span className="text-gray-500">{language === 'da' ? 'Sted' : language === 'de' ? 'Ort' : language === 'nl' ? 'Locatie' : 'Location'}</span>
                 <span className="font-semibold">{getPickupLocation()}</span>
               </div>
               <div className="flex justify-between items-center pb-3 border-b">
-                <span className="text-gray-500">{language === 'da' ? 'Dato' : 'Date'}</span>
+                <span className="text-gray-500">{language === 'da' ? 'Dato' : language === 'de' ? 'Datum' : language === 'nl' ? 'Datum' : 'Date'}</span>
                 <span className="font-semibold capitalize">{tomorrowFormatted}</span>
               </div>
               {showConfirmation.items.map((item, i) => (
@@ -410,7 +414,7 @@ const GuestBakery = () => {
 
           <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 space-y-2">
             <p className="text-sm text-amber-700 text-center">
-              {language === 'da' ? 'Betaling sker ved afhentning' : 'Pay at pickup'}
+              {language === 'da' ? 'Betaling sker ved afhentning' : language === 'de' ? 'Bezahlung erfolgt bei Abholung' : language === 'nl' ? 'Betaling vindt plaats bij afhalen' : 'Pay at pickup'}
             </p>
           </div>
 
@@ -418,7 +422,7 @@ const GuestBakery = () => {
             className="w-full bg-teal-600 hover:bg-teal-700 h-12" 
             onClick={() => setShowConfirmation(null)}
           >
-            {language === 'da' ? 'Tilbage til oversigt' : 'Back to overview'}
+            {language === 'da' ? 'Tilbage til oversigt' : language === 'de' ? 'Zurück zur Übersicht' : language === 'nl' ? 'Terug naar overzicht' : 'Back to overview'}
           </Button>
         </div>
       </div>
@@ -430,7 +434,7 @@ const GuestBakery = () => {
     <div className="bg-white min-h-screen">
       <PageHeader 
         title={t('orderBread')}
-        subtitle={language === 'da' ? 'Friske morgenbrød hver dag' : 'Fresh bread every morning'}
+        subtitle={language === 'da' ? 'Friske morgenbrød hver dag' : language === 'de' ? 'Frische Morgenbrötchen jeden Tag' : language === 'nl' ? 'Verse ochtendbroodjes elke dag' : 'Fresh bread every morning'}
         image={HEADER_IMAGE}
         guestName={guest.firstName}
         bookingId={guest.bookingId}
@@ -441,12 +445,12 @@ const GuestBakery = () => {
         <div className="max-w-2xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <CalendarDays className="h-5 w-5" />
-            <span className="capitalize">{language === 'da' ? 'Til' : 'For'} {tomorrowFormatted}</span>
+            <span className="capitalize">{language === 'da' ? 'Din kurv' : language === 'de' ? 'Ihr Warenkorb' : language === 'nl' ? 'Uw winkelwagen' : 'Your cart'} {tomorrowFormatted}</span>
           </div>
           <span className="text-sm text-white/80">
             {language === 'da' 
               ? `Bestil mellem ${orderOpenTime} og ${orderCloseTime}` 
-              : `Order between ${orderOpenTime} and ${orderCloseTime}`}
+              : language === 'de' ? `Bestellen zwischen ${orderOpenTime} und ${orderCloseTime}` : language === 'nl' ? `Bestel tussen ${orderOpenTime} en ${orderCloseTime}` : `Order between ${orderOpenTime} and ${orderCloseTime}`}
           </span>
         </div>
       </div>
@@ -459,11 +463,11 @@ const GuestBakery = () => {
             <div>
               <p className="font-medium text-red-700">
                 {isBeforeOpen 
-                  ? (language === 'da' ? `Bestilling åbner kl. ${orderOpenTime}` : `Ordering opens at ${orderOpenTime}`)
-                  : (language === 'da' ? 'Bestilling lukket' : 'Orders closed')}
+                  ? (language === 'da' ? `Bestilling åbner kl. ${orderOpenTime}` : language === 'de' ? `Bestellung öffnet um ${orderOpenTime}` : language === 'nl' ? `Bestellen opent om ${orderOpenTime}` : `Ordering opens at ${orderOpenTime}`)
+                  : (language === 'da' ? 'Bestilling lukket' : language === 'de' ? 'Bestellung geschlossen' : language === 'nl' ? 'Bestellen gesloten' : 'Orders closed')}
               </p>
               <p className="text-sm text-red-600">
-                {language === 'da' ? 'Åbner igen i morgen' : 'Opens again tomorrow'}
+                {language === 'da' ? 'Åbner igen i morgen' : language === 'de' ? 'Öffnet wieder morgen' : language === 'nl' ? 'Opent weer morgen' : 'Opens again tomorrow'}
               </p>
             </div>
           </div>
@@ -477,12 +481,12 @@ const GuestBakery = () => {
                 <CheckCircle2 className="h-6 w-6 text-teal-600 mt-0.5" />
                 <div className="flex-1">
                   <p className="font-semibold text-teal-800 mb-2">
-                    {language === 'da' ? 'Du har en bestilling til i morgen' : 'You have an order for tomorrow'}
+                    {language === 'da' ? 'Du har en bestilling til i morgen' : language === 'de' ? 'Sie haben eine Bestellung für morgen' : language === 'nl' ? 'U heeft een bestelling voor morgen' : 'You have an order for tomorrow'}
                   </p>
                   <div className="bg-white rounded-lg p-3 space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="font-mono font-bold">{existingOrderForTomorrow.order_number}</span>
-                      <Badge variant="secondary">{language === 'da' ? 'Afventer' : 'Pending'}</Badge>
+                      <Badge variant="secondary">{language === 'da' ? 'Afventer' : language === 'de' ? 'Wird bearbeitet' : language === 'nl' ? 'Wordt verwerkt' : 'Pending'}</Badge>
                     </div>
                     <div className="text-sm">
                       {existingOrderForTomorrow.items.map((item, i) => (
@@ -496,7 +500,7 @@ const GuestBakery = () => {
                     <p className="text-xs text-gray-500 pt-2">
                       {language === 'da' 
                         ? `Afhentning ${settings?.pickup_start_time}-${settings?.pickup_end_time} i ${getPickupLocation()}` 
-                        : `Pickup ${settings?.pickup_start_time}-${settings?.pickup_end_time} at ${getPickupLocation()}`}
+                        : language === 'de' ? `Abholung ${settings?.pickup_start_time}-${settings?.pickup_end_time} in ${getPickupLocation()}` : language === 'nl' ? `Afhalen ${settings?.pickup_start_time}-${settings?.pickup_end_time} in ${getPickupLocation()}` : `Pickup ${settings?.pickup_start_time}-${settings?.pickup_end_time} at ${getPickupLocation()}`}
                     </p>
                   </div>
                   {/* Cancel button - only if before close time */}
@@ -508,7 +512,7 @@ const GuestBakery = () => {
                       onClick={() => handleCancelOrder(existingOrderForTomorrow.id)}
                     >
                       <X className="h-4 w-4 mr-1" />
-                      {language === 'da' ? 'Annuller bestilling' : 'Cancel order'}
+                      {language === 'da' ? 'Annuller bestilling' : language === 'de' ? 'Bestellung stornieren' : language === 'nl' ? 'Bestelling annuleren' : 'Cancel order'}
                     </Button>
                   )}
                 </div>
@@ -568,7 +572,7 @@ const GuestBakery = () => {
                     </div>
                     {(cart[product.id] || 0) >= product.max_per_order && (
                       <p className="text-xs text-gray-400 px-4 pb-2">
-                        Max {product.max_per_order} {language === 'da' ? 'pr. bestilling' : 'per order'}
+                        Max {product.max_per_order} {language === 'da' ? 'pr. bestilling' : language === 'de' ? 'pro Bestellung' : language === 'nl' ? 'per bestelling' : 'per order'}
                       </p>
                     )}
                   </CardContent>
@@ -586,7 +590,7 @@ const GuestBakery = () => {
                       <p className="font-medium text-blue-800">
                         {language === 'da' 
                           ? `Afhentning i morgen ${settings?.pickup_start_time}-${settings?.pickup_end_time}` 
-                          : `Pickup tomorrow ${settings?.pickup_start_time}-${settings?.pickup_end_time}`}
+                          : language === 'de' ? `Abholung morgen ${settings?.pickup_start_time}-${settings?.pickup_end_time}` : language === 'nl' ? `Afhalen morgen ${settings?.pickup_start_time}-${settings?.pickup_end_time}` : `Pickup tomorrow ${settings?.pickup_start_time}-${settings?.pickup_end_time}`}
                       </p>
                       <p className="text-sm text-blue-600">{getPickupLocation()}</p>
                     </div>
@@ -602,7 +606,7 @@ const GuestBakery = () => {
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2">
                       <ShoppingBasket className="h-5 w-5" />
-                      <span>{totalItems} {totalItems === 1 ? (language === 'da' ? 'vare' : 'item') : (language === 'da' ? 'varer' : 'items')}</span>
+                      <span>{totalItems} {totalItems === 1 ? (language === 'da' ? 'vare' : language === 'de' ? 'Artikel' : language === 'nl' ? 'artikel' : 'item') : (language === 'da' ? 'varer' : language === 'de' ? 'Artikel' : language === 'nl' ? 'artikelen' : 'items')}</span>
                     </div>
                     <span className="text-2xl font-bold">{totalPrice} kr</span>
                   </div>
@@ -647,7 +651,7 @@ const GuestBakery = () => {
                     <span className="font-semibold text-teal-600">{order.total} kr</span>
                   </div>
                   <div className="text-sm text-gray-500 space-y-1">
-                    <p>{language === 'da' ? 'Afhentning' : 'Pickup'}: {order.pickup_date}</p>
+                    <p>{language === 'da' ? 'Afhentning' : language === 'de' ? 'Abholung' : language === 'nl' ? 'Afhalen' : 'Pickup'}: {order.pickup_date}</p>
                   </div>
                   <div className="mt-2 text-sm">
                     {order.items.map((item, i) => (

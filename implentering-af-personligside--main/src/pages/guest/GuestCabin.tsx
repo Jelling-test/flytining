@@ -160,24 +160,28 @@ const GuestCabin = () => {
 
   const getText = (item: ChecklistItem) => {
     if (language === 'de') return item.text_de;
+    if (language === 'nl') return item.text_en; // NL falder tilbage til EN
     if (language === 'en') return item.text_en;
     return item.text_da;
   };
 
   const getInfoTitle = (section: InfoSection) => {
     if (language === 'de') return section.title_de;
+    if (language === 'nl') return section.title_en; // NL falder tilbage til EN
     if (language === 'en') return section.title_en;
     return section.title_da;
   };
 
   const getInfoText = (section: InfoSection) => {
     if (language === 'de') return section.text_de;
+    if (language === 'nl') return section.text_en; // NL falder tilbage til EN
     if (language === 'en') return section.text_en;
     return section.text_da;
   };
 
   const getInventoryName = (item: InventoryItem) => {
     if (language === 'de') return item.name_de;
+    if (language === 'nl') return item.name_en; // NL falder tilbage til EN
     if (language === 'en') return item.name_en;
     return item.name_da;
   };
@@ -211,8 +215,8 @@ const GuestCabin = () => {
   return (
     <div className="bg-white min-h-screen">
       <PageHeader 
-        title={language === 'da' ? 'Din hytte' : language === 'de' ? 'Ihre Hütte' : 'Your cabin'}
-        subtitle={language === 'da' ? 'Tjeklister ved ankomst og afrejse' : 'Checklists for arrival and departure'}
+        title={language === 'da' ? 'Din hytte' : language === 'de' ? 'Ihre Hütte' : language === 'nl' ? 'Uw hut' : 'Your cabin'}
+        subtitle={language === 'da' ? 'Tjeklister ved ankomst og afrejse' : language === 'de' ? 'Checklisten für Ankunft und Abreise' : language === 'nl' ? 'Checklists voor aankomst en vertrek' : 'Checklists for arrival and departure'}
         image={HEADER_IMAGE}
       />
       
@@ -223,7 +227,7 @@ const GuestCabin = () => {
         <section className="space-y-3">
           <div className="flex items-center justify-between">
             <h2 className="font-semibold text-lg">
-              {language === 'da' ? 'Hvad er i hytten' : language === 'de' ? 'Was ist in der Hütte' : "What's in the cabin"}
+              {language === 'da' ? 'Hvad er i hytten' : language === 'de' ? 'Was ist in der Hütte' : language === 'nl' ? 'Wat zit er in de hut' : "What's in the cabin"}
             </h2>
             {/* Inventar knap */}
             {s.inventory && s.inventory.length > 0 && (
@@ -231,7 +235,7 @@ const GuestCabin = () => {
                 <DialogTrigger asChild>
                   <Button variant="outline" size="sm" className="gap-2">
                     <ClipboardList className="h-4 w-4" />
-                    {language === 'da' ? 'Se inventarliste' : language === 'de' ? 'Inventarliste' : 'Inventory list'}
+                    {language === 'da' ? 'Se inventarliste' : language === 'de' ? 'Inventarliste' : language === 'nl' ? 'Inventarislijst' : 'Inventory list'}
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="max-w-md max-h-[80vh] overflow-y-auto">
@@ -288,7 +292,7 @@ const GuestCabin = () => {
         <div className="flex items-center gap-2">
           <DoorOpen className="h-5 w-5 text-green-600" />
           <h2 className="font-semibold text-lg text-green-800">
-            {language === 'da' ? 'Ved ankomst' : language === 'de' ? 'Bei Ankunft' : 'Upon arrival'}
+            {language === 'da' ? 'Ved ankomst' : language === 'de' ? 'Bei Ankunft' : language === 'nl' ? 'Bij aankomst' : 'Upon arrival'}
           </h2>
         </div>
         <Card className="border-green-200 bg-green-50">
@@ -308,12 +312,13 @@ const GuestCabin = () => {
         <div className="flex items-center gap-2">
           <DoorClosed className="h-5 w-5 text-amber-600" />
           <h2 className="font-semibold text-lg text-amber-800">
-            {language === 'da' ? 'Ved afrejse - SKAL udføres' : language === 'de' ? 'Bei Abreise - MUSS erledigt werden' : 'Before departure - MUST be done'}
+            {language === 'da' ? 'Ved afrejse - SKAL udføres' : language === 'de' ? 'Bei Abreise - MUSS erledigt werden' : language === 'nl' ? 'Bij vertrek - MOET worden gedaan' : 'Before departure - MUST be done'}
           </h2>
         </div>
         <p className="text-sm text-amber-700">
           {language === 'da' ? 'Såfremt det ikke er udført, opkræves nedenstående gebyrer' : 
            language === 'de' ? 'Bei Nichterfüllung werden folgende Gebühren erhoben' :
+           language === 'nl' ? 'Als dit niet is gedaan, worden de volgende kosten in rekening gebracht' :
            'If not completed, the following fees will be charged'}
         </p>
         <Card className="border-amber-200">
@@ -344,7 +349,7 @@ const GuestCabin = () => {
         <div className="flex items-center gap-2">
           <Sparkles className="h-5 w-5 text-red-600" />
           <h2 className="font-semibold text-lg text-red-800">
-            {language === 'da' ? 'Slutrengøring' : language === 'de' ? 'Endreinigung' : 'Final cleaning'}
+            {language === 'da' ? 'Slutrengøring' : language === 'de' ? 'Endreinigung' : language === 'nl' ? 'Eindschoonmaak' : 'Final cleaning'}
           </h2>
         </div>
         <Card className="border-teal-200 bg-teal-50 mb-3">
@@ -352,6 +357,7 @@ const GuestCabin = () => {
             <p className="text-sm text-teal-800">
               {language === 'da' ? `Slutrengøring kan tilkøbes for ${s.cleaning_price},-` : 
                language === 'de' ? `Endreinigung kann für ${s.cleaning_price},- DKK zugebucht werden` :
+               language === 'nl' ? `Eindschoonmaak kan worden bijgekocht voor ${s.cleaning_price},-` :
                `Final cleaning can be purchased for ${s.cleaning_price},-`}
             </p>
           </CardContent>
@@ -359,6 +365,7 @@ const GuestCabin = () => {
         <p className="text-sm text-red-700">
           {language === 'da' ? 'Er der IKKE tilkøbt slutrengøring, skal følgende også udføres:' : 
            language === 'de' ? 'Wenn KEINE Endreinigung gebucht wurde, muss auch Folgendes erledigt werden:' :
+           language === 'nl' ? 'Als eindschoonmaak NIET is bijgekocht, moet ook het volgende worden gedaan:' :
            'If final cleaning is NOT purchased, the following must also be done:'}
         </p>
         <Card className="border-red-200">
@@ -389,6 +396,7 @@ const GuestCabin = () => {
             <span className="font-medium">
               {language === 'da' ? 'Alt er klar! God tur hjem!' :
                language === 'de' ? 'Alles erledigt! Gute Heimreise!' :
+               language === 'nl' ? 'Alles klaar! Goede reis naar huis!' :
                'All done! Safe travels!'}
             </span>
           </div>

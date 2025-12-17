@@ -565,7 +565,7 @@ const GuestPower = () => {
       <div className="bg-white min-h-screen">
         <PageHeader 
           title={t('powerManagement')}
-          subtitle={language === 'da' ? 'Styr din strøm' : 'Manage your electricity'}
+          subtitle={language === 'da' ? 'Styr din strøm' : language === 'de' ? 'Verwalten Sie Ihren Strom' : language === 'nl' ? 'Beheer uw stroom' : 'Manage your electricity'}
           image={HEADER_IMAGE}
         />
         <div className="max-w-2xl mx-auto p-6">
@@ -573,10 +573,10 @@ const GuestPower = () => {
             <CardContent className="flex flex-col items-center justify-center py-12 text-center">
               <Lock className="h-12 w-12 text-amber-500 mb-4" />
               <p className="text-gray-800 font-medium mb-2">
-                {language === 'da' ? 'Strømstyring ikke tilgængelig' : 'Power management not available'}
+                {language === 'da' ? 'Strømstyring ikke tilgængelig' : language === 'de' ? 'Stromverwaltung nicht verfügbar' : language === 'nl' ? 'Stroombeheer niet beschikbaar' : 'Power management not available'}
               </p>
               <p className="text-sm text-gray-600">
-                {language === 'da' ? 'Strømstyring er tilgængelig efter check-in' : 'Available after check-in'}
+                {language === 'da' ? 'Strømstyring er tilgængelig efter check-in' : language === 'de' ? 'Nach dem Check-in verfügbar' : language === 'nl' ? 'Beschikbaar na check-in' : 'Available after check-in'}
               </p>
             </CardContent>
           </Card>
@@ -623,7 +623,7 @@ const GuestPower = () => {
       <div className="bg-white min-h-screen">
         <PageHeader 
           title={t('powerManagement')}
-          subtitle={language === 'da' ? `Hytte ${guest.spotNumber}` : `Cabin ${guest.spotNumber}`}
+          subtitle={language === 'da' ? `Hytte ${guest.spotNumber}` : language === 'de' ? `Hütte ${guest.spotNumber}` : language === 'nl' ? `Hut ${guest.spotNumber}` : `Cabin ${guest.spotNumber}`}
           image={HEADER_IMAGE}
         />
         <div className="max-w-2xl mx-auto p-6 space-y-6">
@@ -635,7 +635,7 @@ const GuestPower = () => {
               <div className="flex-1">
                 <p className="font-semibold">Hytte {guest.spotNumber}</p>
                 <p className="text-sm text-white/80">
-                  {language === 'da' ? 'Måler: ' : 'Meter: '}{meterId || cabinMeter?.name || 'Automatisk tildelt'}
+                  {language === 'da' ? 'Måler: ' : language === 'de' ? 'Zähler: ' : language === 'nl' ? 'Meter: ' : 'Meter: '}{meterId || cabinMeter?.name || (language === 'da' ? 'Automatisk tildelt' : language === 'de' ? 'Automatisch zugewiesen' : language === 'nl' ? 'Automatisch toegewezen' : 'Automatically assigned')}
                 </p>
               </div>
               {/* Effekt og Spænding */}
@@ -646,7 +646,7 @@ const GuestPower = () => {
                     <p className="text-lg font-bold">{(cabinMeter.currentPower || 0).toFixed(1)} W</p>
                   </div>
                   <div>
-                    <p className="text-xs text-white/70">{language === 'da' ? 'Spænding' : 'Voltage'}</p>
+                    <p className="text-xs text-white/70">{language === 'da' ? 'Spænding' : language === 'de' ? 'Spannung' : language === 'nl' ? 'Spanning' : 'Voltage'}</p>
                     <p className="text-lg font-bold">{Math.round(cabinMeter.voltage || 0)} V</p>
                   </div>
                 </div>
@@ -654,7 +654,7 @@ const GuestPower = () => {
               {/* Tænd/sluk */}
               {cabinMeter && (
                 <div className="flex items-center gap-2 ml-2">
-                  <span className="text-sm">{getMeterPowerState(cabinMeter) ? 'Tændt' : 'Slukket'}</span>
+                  <span className="text-sm">{getMeterPowerState(cabinMeter) ? (language === 'da' ? 'Tændt' : language === 'de' ? 'Ein' : language === 'nl' ? 'Aan' : 'On') : (language === 'da' ? 'Slukket' : language === 'de' ? 'Aus' : language === 'nl' ? 'Uit' : 'Off')}</span>
                   <Switch
                     checked={getMeterPowerState(cabinMeter)}
                     onCheckedChange={() => toggleMeterPower(cabinMeter.id, getMeterPowerState(cabinMeter))}
@@ -670,22 +670,22 @@ const GuestPower = () => {
               <div className="flex items-center justify-between">
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Zap className="h-5 w-5 text-teal-600" />
-                  {language === 'da' ? 'Inkluderet strøm' : 'Included power'}
+                  {language === 'da' ? 'Inkluderet strøm' : language === 'de' ? 'Inklusivstrom' : language === 'nl' ? 'Inbegrepen stroom' : 'Included power'}
                 </CardTitle>
                 <Badge variant="secondary" className="bg-teal-100 text-teal-700">
-                  {language === 'da' ? 'Inkluderet i ophold' : 'Included in stay'}
+                  {language === 'da' ? 'Inkluderet i ophold' : language === 'de' ? 'Im Aufenthalt enthalten' : language === 'nl' ? 'Inbegrepen in verblijf' : 'Included in stay'}
                 </Badge>
               </div>
               <CardDescription>
-                {mainPackage?.name || `Energipakke ${remainingDays} ${remainingDays === 1 ? 'dag' : 'dage'}`}
+                {mainPackage?.name || (language === 'da' ? `Energipakke ${remainingDays} ${remainingDays === 1 ? 'dag' : 'dage'}` : language === 'de' ? `Energiepaket ${remainingDays} ${remainingDays === 1 ? 'Tag' : 'Tage'}` : language === 'nl' ? `Energiepakket ${remainingDays} ${remainingDays === 1 ? 'dag' : 'dagen'}` : `Energy package ${remainingDays} ${remainingDays === 1 ? 'day' : 'days'}`)}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               {/* Forbrug */}
               <div>
                 <div className="flex justify-between text-sm mb-2">
-                  <span className="text-gray-600">{language === 'da' ? 'Forbrug' : 'Usage'}</span>
-                  <span className="font-medium">{usedEnheder.toFixed(1)} / {totalEnheder} {language === 'da' ? 'enheder' : 'units'}</span>
+                  <span className="text-gray-600">{language === 'da' ? 'Forbrug' : language === 'de' ? 'Verbrauch' : language === 'nl' ? 'Verbruik' : 'Usage'}</span>
+                  <span className="font-medium">{usedEnheder.toFixed(1)} / {totalEnheder} {language === 'da' ? 'enheder' : language === 'de' ? 'Einheiten' : language === 'nl' ? 'eenheden' : 'units'}</span>
                 </div>
                 <Progress value={usagePercent} className={isLowPower ? 'bg-red-100' : 'bg-gray-100'} />
               </div>
@@ -700,17 +700,19 @@ const GuestPower = () => {
                       <CheckCircle2 className="h-5 w-5 text-teal-600" />
                     )}
                     <span className={isLowPower ? 'text-amber-700' : 'text-teal-700'}>
-                      {language === 'da' ? 'Tilbage' : 'Remaining'}
+                      {language === 'da' ? 'Tilbage' : language === 'de' ? 'Verbleibend' : language === 'nl' ? 'Resterend' : 'Remaining'}
                     </span>
                   </div>
                   <span className={`text-2xl font-bold ${isLowPower ? 'text-amber-700' : 'text-teal-700'}`}>
-                    {remainingEnheder.toFixed(1)} {language === 'da' ? 'enheder' : 'units'}
+                    {remainingEnheder.toFixed(1)} {language === 'da' ? 'enheder' : language === 'de' ? 'Einheiten' : language === 'nl' ? 'eenheden' : 'units'}
                   </span>
                 </div>
                 {isLowPower && (
                   <p className="text-sm text-amber-600 mt-2">
                     {language === 'da' 
                       ? 'Du har snart brugt din inkluderede strøm. Køb en tillægspakke nedenfor.'
+                      : language === 'de' ? 'Ihr Inklusivstrom ist bald aufgebraucht. Kaufen Sie unten ein Zusatzpaket.'
+                      : language === 'nl' ? 'Uw inbegrepen stroom is bijna op. Koop hieronder een aanvullend pakket.'
                       : 'You are running low on included power. Buy an add-on package below.'}
                   </p>
                 )}
@@ -720,6 +722,8 @@ const GuestPower = () => {
               <p className="text-sm text-gray-500">
                 {language === 'da' 
                   ? 'Du har inkluderet 10 enheder pr. dag i din booking. Har du behov for mere strøm kan du tilkøbe ekstra pakker.'
+                  : language === 'de' ? 'Sie haben 10 Einheiten pro Tag in Ihrer Buchung inklusive. Bei Bedarf können Sie Zusatzpakete kaufen.'
+                  : language === 'nl' ? 'U heeft 10 eenheden per dag inbegrepen in uw boeking. Heeft u meer stroom nodig, dan kunt u extra pakketten kopen.'
                   : 'You have 10 units per day included in your booking. If you need more power, you can purchase extra packages.'}
               </p>
             </CardContent>
@@ -731,7 +735,7 @@ const GuestPower = () => {
               <CardHeader className="pb-2">
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Zap className="h-5 w-5 text-teal-600" />
-                  {language === 'da' ? 'Dine pakker' : 'Your packages'}
+                  {language === 'da' ? 'Dine pakker' : language === 'de' ? 'Ihre Pakete' : language === 'nl' ? 'Uw pakketten' : 'Your packages'}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
@@ -742,13 +746,13 @@ const GuestPower = () => {
                       <div className="flex items-center gap-2">
                         <span className="font-medium">{includedPackage.name || (language === 'da' ? 'Inkluderet i booking' : 'Included in booking')}</span>
                         <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-teal-100 text-teal-800">
-                          {language === 'da' ? 'INKLUDERET' : 'INCLUDED'}
+                          {language === 'da' ? 'INKLUDERET' : language === 'de' ? 'INKLUSIVE' : language === 'nl' ? 'INBEGREPEN' : 'INCLUDED'}
                         </span>
                       </div>
                       <span className="font-semibold text-teal-600">{includedPackage.enheder} {language === 'da' ? 'enheder' : 'units'}</span>
                     </div>
                     <p className="text-sm text-gray-500 mt-1">
-                      {language === 'da' ? '10 enheder pr. dag i dit ophold' : '10 units per day of your stay'}
+                      {language === 'da' ? '10 enheder pr. dag i dit ophold' : language === 'de' ? '10 Einheiten pro Tag Ihres Aufenthalts' : language === 'nl' ? '10 eenheden per dag van uw verblijf' : '10 units per day of your stay'}
                     </p>
                   </div>
                 )}
@@ -760,13 +764,13 @@ const GuestPower = () => {
                       <div className="flex items-center gap-2">
                         <span className="font-medium">{pkg.name}</span>
                         <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-purple-100 text-purple-800">
-                          {language === 'da' ? 'TILLÆG' : 'ADD-ON'}
+                          {language === 'da' ? 'TILLÆG' : language === 'de' ? 'ZUSATZ' : language === 'nl' ? 'EXTRA' : 'ADD-ON'}
                         </span>
                       </div>
                       <span className="font-semibold text-teal-600">{pkg.enheder} {language === 'da' ? 'enheder' : 'units'}</span>
                     </div>
                     <p className="text-sm text-gray-500 mt-1">
-                      {language === 'da' ? 'Købt via Stripe' : 'Purchased via Stripe'}
+                      {language === 'da' ? 'Købt via Stripe' : language === 'de' ? 'Über Stripe gekauft' : language === 'nl' ? 'Gekocht via Stripe' : 'Purchased via Stripe'}
                     </p>
                   </div>
                 ))}
@@ -779,11 +783,13 @@ const GuestPower = () => {
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <ShoppingCart className="h-5 w-5 text-orange-500" />
-                {language === 'da' ? 'Køb ekstra strøm' : 'Buy extra power'}
+                {language === 'da' ? 'Køb ekstra strøm' : language === 'de' ? 'Extra Strom kaufen' : language === 'nl' ? 'Extra stroom kopen' : 'Buy extra power'}
               </CardTitle>
               <CardDescription>
                 {language === 'da' 
                   ? 'Tillægspakker tilføjes til din nuværende strøm'
+                  : language === 'de' ? 'Zusatzpakete werden zu Ihrem aktuellen Strom hinzugefügt'
+                  : language === 'nl' ? 'Aanvullende pakketten worden toegevoegd aan uw huidige stroom'
                   : 'Add-on packages are added to your current power'}
               </CardDescription>
             </CardHeader>
@@ -860,8 +866,8 @@ const GuestPower = () => {
     return (
       <div className="bg-white min-h-screen">
         <PageHeader 
-          title={language === 'da' ? 'Aktiver strøm' : 'Activate power'}
-          subtitle={language === 'da' ? 'Trin 1: Vælg din strømmåler' : 'Step 1: Select your meter'}
+          title={language === 'da' ? 'Aktiver strøm' : language === 'de' ? 'Strom aktivieren' : language === 'nl' ? 'Stroom activeren' : 'Activate power'}
+          subtitle={language === 'da' ? 'Trin 1: Vælg din strømmåler' : language === 'de' ? 'Schritt 1: Wählen Sie Ihren Zähler' : language === 'nl' ? 'Stap 1: Selecteer uw meter' : 'Step 1: Select your meter'}
           image={HEADER_IMAGE}
         />
         
@@ -870,12 +876,12 @@ const GuestPower = () => {
           <div className="max-w-2xl mx-auto flex items-center gap-4">
             <div className="flex items-center gap-2">
               <div className="h-8 w-8 rounded-full bg-white text-teal-700 flex items-center justify-center font-bold">1</div>
-              <span className="font-medium">{language === 'da' ? 'Vælg måler' : 'Select meter'}</span>
+              <span className="font-medium">{language === 'da' ? 'Vælg måler' : language === 'de' ? 'Zähler wählen' : language === 'nl' ? 'Meter selecteren' : 'Select meter'}</span>
             </div>
             <ArrowRight className="h-4 w-4 text-white/50" />
             <div className="flex items-center gap-2 opacity-50">
               <div className="h-8 w-8 rounded-full bg-white/30 flex items-center justify-center font-bold">2</div>
-              <span>{language === 'da' ? 'Køb pakke' : 'Buy package'}</span>
+              <span>{language === 'da' ? 'Køb pakke' : language === 'de' ? 'Paket kaufen' : language === 'nl' ? 'Pakket kopen' : 'Buy package'}</span>
             </div>
           </div>
         </div>
@@ -886,10 +892,10 @@ const GuestPower = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Search className="h-5 w-5 text-teal-600" />
-                {language === 'da' ? 'Find din strømmåler' : 'Find your meter'}
+                {language === 'da' ? 'Find din strømmåler' : language === 'de' ? 'Finden Sie Ihren Zähler' : language === 'nl' ? 'Vind uw meter' : 'Find your meter'}
               </CardTitle>
               <CardDescription>
-                {language === 'da' ? 'Indtast nummeret på standeren ved din plads' : 'Enter the number on the power stand at your spot'}
+                {language === 'da' ? 'Indtast nummeret på standeren ved din plads' : language === 'de' ? 'Geben Sie die Nummer am Stromständer bei Ihrem Platz ein' : language === 'nl' ? 'Voer het nummer in van de stroomzuil bij uw plek' : 'Enter the number on the power stand at your spot'}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -897,7 +903,7 @@ const GuestPower = () => {
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
                 <Input
                   type="text"
-                  placeholder={language === 'da' ? 'F.eks. 42, 150, 200...' : 'E.g. 42, 150, 200...'}
+                  placeholder={language === 'da' ? 'F.eks. 42, 150, 200...' : language === 'de' ? 'Z.B. 42, 150, 200...' : language === 'nl' ? 'Bijv. 42, 150, 200...' : 'E.g. 42, 150, 200...'}
                   value={meterSearch}
                   onChange={(e) => handleMeterSearch(e.target.value)}
                   className="pl-12 h-14 text-lg"
@@ -942,7 +948,7 @@ const GuestPower = () => {
 
               {meterSearch.length > 0 && searchResults.length === 0 && !isSearching && (
                 <p className="text-center text-gray-500 py-4">
-                  {language === 'da' ? 'Ingen ledige målere fundet' : 'No available meters found'}
+                  {language === 'da' ? 'Ingen ledige målere fundet' : language === 'de' ? 'Keine verfügbaren Zähler gefunden' : language === 'nl' ? 'Geen beschikbare meters gevonden' : 'No available meters found'}
                 </p>
               )}
             </CardContent>
@@ -958,12 +964,12 @@ const GuestPower = () => {
               {isConfirmingMeter ? (
                 <>
                   <Loader2 className="h-5 w-5 animate-spin mr-2" />
-                  {language === 'da' ? 'Bekræfter...' : 'Confirming...'}
+                  {language === 'da' ? 'Bekræfter...' : language === 'de' ? 'Bestätigen...' : language === 'nl' ? 'Bevestigen...' : 'Confirming...'}
                 </>
               ) : (
                 <>
                   <CheckCircle2 className="h-5 w-5 mr-2" />
-                  {language === 'da' ? `Bekræft stander ${selectedMeter.meter_number}` : `Confirm stand ${selectedMeter.meter_number}`}
+                  {language === 'da' ? `Bekræft stander ${selectedMeter.meter_number}` : language === 'de' ? `Ständer ${selectedMeter.meter_number} bestätigen` : language === 'nl' ? `Zuil ${selectedMeter.meter_number} bevestigen` : `Confirm stand ${selectedMeter.meter_number}`}
                 </>
               )}
             </Button>
@@ -973,11 +979,11 @@ const GuestPower = () => {
           <Card className="bg-gray-50">
             <CardContent className="p-4">
               <p className="text-sm text-gray-600 font-medium mb-2">
-                {language === 'da' ? 'Sådan finder du nummeret:' : 'How to find the number:'}
+                {language === 'da' ? 'Sådan finder du nummeret:' : language === 'de' ? 'So finden Sie die Nummer:' : language === 'nl' ? 'Zo vindt u het nummer:' : 'How to find the number:'}
               </p>
               <ul className="text-sm text-gray-500 space-y-1">
-                <li>• {language === 'da' ? 'Nummeret står på strømboksen ved din plads' : 'The number is on the power box at your spot'}</li>
-                <li>• {language === 'da' ? 'Det er typisk et 1-3 cifret tal' : 'It is typically a 1-3 digit number'}</li>
+                <li>• {language === 'da' ? 'Nummeret står på strømboksen ved din plads' : language === 'de' ? 'Die Nummer steht auf der Strombox an Ihrem Platz' : language === 'nl' ? 'Het nummer staat op de stroomkast bij uw plek' : 'The number is on the power box at your spot'}</li>
+                <li>• {language === 'da' ? 'Det er typisk et 1-3 cifret tal' : language === 'de' ? 'Es ist typischerweise eine 1-3 stellige Zahl' : language === 'nl' ? 'Het is meestal een 1-3 cijferig nummer' : 'It is typically a 1-3 digit number'}</li>
               </ul>
             </CardContent>
           </Card>
@@ -994,8 +1000,8 @@ const GuestPower = () => {
     return (
       <div className="bg-white min-h-screen">
         <PageHeader 
-          title={language === 'da' ? 'Køb strømpakke' : 'Buy power package'}
-          subtitle={language === 'da' ? 'Trin 2: Vælg din pakke' : 'Step 2: Select your package'}
+          title={language === 'da' ? 'Køb strømpakke' : language === 'de' ? 'Strompaket kaufen' : language === 'nl' ? 'Stroompakket kopen' : 'Buy power package'}
+          subtitle={language === 'da' ? 'Trin 2: Vælg din pakke' : language === 'de' ? 'Schritt 2: Wählen Sie Ihr Paket' : language === 'nl' ? 'Stap 2: Selecteer uw pakket' : 'Step 2: Select your package'}
           image={HEADER_IMAGE}
         />
         
@@ -1004,7 +1010,7 @@ const GuestPower = () => {
           <div className="max-w-2xl mx-auto flex items-center gap-4">
             <div className="flex items-center gap-2 opacity-50">
               <div className="h-8 w-8 rounded-full bg-white/30 flex items-center justify-center font-bold">✓</div>
-              <span>{language === 'da' ? 'Måler valgt' : 'Meter selected'}</span>
+              <span>{language === 'da' ? 'Måler valgt' : language === 'de' ? 'Zähler ausgewählt' : language === 'nl' ? 'Meter geselecteerd' : 'Meter selected'}</span>
             </div>
             <ArrowRight className="h-4 w-4 text-white/50" />
             <div className="flex items-center gap-2">
@@ -1021,7 +1027,7 @@ const GuestPower = () => {
               <Zap className="h-6 w-6 text-teal-600" />
               <div>
                 <p className="font-medium text-teal-800">
-                  {language === 'da' ? 'Din måler er klar' : 'Your meter is ready'}
+                  {language === 'da' ? 'Din måler er klar' : language === 'de' ? 'Ihr Zähler ist bereit' : language === 'nl' ? 'Uw meter is klaar' : 'Your meter is ready'}
                 </p>
                 <p className="text-sm text-teal-600">Stander {meterId || meters[0]?.name || selectedMeter?.meter_number}</p>
               </div>
@@ -1081,7 +1087,7 @@ const GuestPower = () => {
                   />
                   <div>
                     <label htmlFor="terms" className="text-sm font-medium cursor-pointer">
-                      {language === 'da' ? 'Jeg accepterer vilkårene' : 'I accept the terms'}
+                      {language === 'da' ? 'Jeg accepterer vilkårene' : language === 'de' ? 'Ich akzeptiere die Bedingungen' : language === 'nl' ? 'Ik accepteer de voorwaarden' : 'I accept the terms'}
                     </label>
                     <p className="text-xs text-gray-500 mt-1">
                       {isSeasonal 
@@ -1104,7 +1110,7 @@ const GuestPower = () => {
                   {isPurchasing ? (
                     <>
                       <Loader2 className="h-5 w-5 animate-spin mr-2" />
-                      {language === 'da' ? 'Omdirigerer...' : 'Redirecting...'}
+                      {language === 'da' ? 'Omdirigerer...' : language === 'de' ? 'Weiterleitung...' : language === 'nl' ? 'Doorsturen...' : 'Redirecting...'}
                     </>
                   ) : (
                     <>
@@ -1148,7 +1154,7 @@ const GuestPower = () => {
         <div className="max-w-2xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-2">
             <Zap className="h-5 w-5" />
-            <span>{language === 'da' ? 'Samlet forbrug' : 'Total usage'}</span>
+            <span>{language === 'da' ? 'Samlet forbrug' : language === 'de' ? 'Gesamtverbrauch' : language === 'nl' ? 'Totaal verbruik' : 'Total usage'}</span>
           </div>
           <div className="text-right">
             <span className="font-bold">{totalUsage.toFixed(1)} enheder</span>
@@ -1207,7 +1213,7 @@ const GuestPower = () => {
           <div className="space-y-3">
             <h2 className="font-semibold text-gray-800 flex items-center gap-2">
               <Zap className="h-5 w-5 text-teal-600" />
-              {language === 'da' ? 'Dine pakker' : 'Your packages'}
+              {language === 'da' ? 'Dine pakker' : language === 'de' ? 'Ihre Pakete' : language === 'nl' ? 'Uw pakketten' : 'Your packages'}
             </h2>
             {packages.map((pkg) => {
               const isDagspakke = pkg.type === 'dagspakke';
@@ -1254,7 +1260,7 @@ const GuestPower = () => {
         <div className="space-y-4">
           <h2 className="font-semibold text-gray-800 flex items-center gap-2">
             <Zap className="h-5 w-5 text-teal-600" />
-            {language === 'da' ? 'Dine elmålere' : 'Your meters'}
+            {language === 'da' ? 'Dine elmålere' : language === 'de' ? 'Ihre Zähler' : language === 'nl' ? 'Uw meters' : 'Your meters'}
           </h2>
           
           {meters.map((meter) => {
@@ -1271,7 +1277,7 @@ const GuestPower = () => {
                       <div>
                         <p className="font-semibold">{meter.name}</p>
                         <p className="text-sm text-white/80">
-                          {isPowerOn ? (language === 'da' ? 'Tændt' : 'On') : (language === 'da' ? 'Slukket' : 'Off')}
+                          {isPowerOn ? (language === 'da' ? 'Tændt' : language === 'de' ? 'Ein' : language === 'nl' ? 'Aan' : 'On') : (language === 'da' ? 'Slukket' : language === 'de' ? 'Aus' : language === 'nl' ? 'Uit' : 'Off')}
                         </p>
                       </div>
                     </div>
@@ -1282,7 +1288,7 @@ const GuestPower = () => {
                         <p className="text-lg font-bold">{(meter.currentPower || 0).toFixed(1)} W</p>
                       </div>
                       <div>
-                        <p className="text-xs text-white/70">{language === 'da' ? 'Spænding' : 'Voltage'}</p>
+                        <p className="text-xs text-white/70">{language === 'da' ? 'Spænding' : language === 'de' ? 'Spannung' : language === 'nl' ? 'Spanning' : 'Voltage'}</p>
                         <p className="text-lg font-bold">{Math.round(meter.voltage || 0)} V</p>
                       </div>
                     </div>
@@ -1314,13 +1320,13 @@ const GuestPower = () => {
             onClick={() => setShowPackages(true)}
           >
             <ShoppingCart className="h-5 w-5 mr-2" />
-            {language === 'da' ? 'Køb mere strøm' : 'Buy more power'}
+            {language === 'da' ? 'Køb mere strøm' : language === 'de' ? 'Mehr Strom kaufen' : language === 'nl' ? 'Meer stroom kopen' : 'Buy more power'}
           </Button>
         ) : (
           <Card className="border-0 shadow-lg">
             <CardHeader className="border-b">
               <CardTitle className="flex items-center justify-between">
-                <span>{language === 'da' ? 'Tillægspakker' : 'Add-on packages'}</span>
+                <span>{language === 'da' ? 'Tillægspakker' : language === 'de' ? 'Zusatzpakete' : language === 'nl' ? 'Aanvullende pakketten' : 'Add-on packages'}</span>
                 <Button variant="ghost" size="sm" onClick={() => setShowPackages(false)}>✕</Button>
               </CardTitle>
             </CardHeader>

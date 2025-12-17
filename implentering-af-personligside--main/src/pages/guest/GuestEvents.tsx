@@ -300,7 +300,7 @@ const GuestEvents = () => {
     <div className="bg-white min-h-screen">
       <PageHeader 
         title={t('events')}
-        subtitle={language === 'da' ? 'Events på og omkring campingpladsen' : 'Events at and around the campsite'}
+        subtitle={language === 'da' ? 'Events på og omkring campingpladsen' : language === 'de' ? 'Veranstaltungen auf und um den Campingplatz' : language === 'nl' ? 'Evenementen op en rond de camping' : 'Events at and around the campsite'}
         image={HEADER_IMAGE}
       />
       
@@ -308,57 +308,38 @@ const GuestEvents = () => {
         {/* EVENTS I DIN PERIODE */}
         <section className="space-y-4">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center">
-              <CalendarDays className="h-5 w-5 text-white" />
-            </div>
-            <div>
-              <h2 className="font-semibold text-xl text-gray-800">
-                {language === 'da' ? 'Events i din periode' : language === 'de' ? 'Events in Ihrem Zeitraum' : 'Events during your stay'}
-              </h2>
-              <p className="text-sm text-muted-foreground">
-                {language === 'da' ? 'De næste 14 dage • Max 50 km' : 'Next 14 days • Max 50 km'}
-              </p>
-            </div>
+            <CalendarDays className="h-5 w-5 text-teal-600" />
+            <h2 className="font-semibold text-lg">
+              {language === 'da' ? 'Events i din periode' : language === 'de' ? 'Veranstaltungen während Ihres Aufenthalts' : language === 'nl' ? 'Evenementen tijdens uw verblijf' : 'Events during your stay'}
+            </h2>
+            <span className="text-sm text-muted-foreground ml-auto">
+              {language === 'da' ? 'De næste 14 dage • Max 50 km' : language === 'de' ? 'Die nächsten 14 Tage • Max 50 km' : language === 'nl' ? 'De komende 14 dagen • Max 50 km' : 'Next 14 days • Max 50 km'}
+            </span>
           </div>
           
-          {/* Legend */}
-          <div className="flex items-center gap-4 text-sm">
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-teal-500" />
-              <span className="text-muted-foreground">
-                {language === 'da' ? 'På campingpladsen' : 'At the campsite'}
-              </span>
+          {loading ? (
+            <div className="flex justify-center py-8">
+              <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-gray-300" />
-              <span className="text-muted-foreground">
-                {language === 'da' ? 'I nærheden' : 'Nearby'}
-              </span>
-            </div>
-          </div>
-          
-          <div className="space-y-3">
-            {loading ? (
-              <div className="flex items-center justify-center py-8">
-                <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
-              </div>
-            ) : allEvents.length === 0 ? (
-              <Card>
-                <CardContent className="p-6 text-center">
-                  <CalendarDays className="h-12 w-12 mx-auto text-muted-foreground mb-3" />
-                  <p className="text-muted-foreground">
-                    {language === 'da' ? 'Ingen events fundet i denne periode' : 
-                     language === 'de' ? 'Keine Events in diesem Zeitraum gefunden' : 
-                     'No events found in this period'}
-                  </p>
-                </CardContent>
-              </Card>
-            ) : (
-              allEvents.map(event => (
+          ) : allEvents.length === 0 ? (
+            <Card className="border-dashed">
+              <CardContent className="flex flex-col items-center justify-center py-12 text-center">
+                <CalendarDays className="h-12 w-12 text-gray-300 mb-4" />
+                <p className="text-gray-500 font-medium">
+                  {language === 'da' ? 'Ingen events fundet' : language === 'de' ? 'Keine Veranstaltungen gefunden' : language === 'nl' ? 'Geen evenementen gevonden' : 'No events found'}
+                </p>
+                <p className="text-sm text-gray-400">
+                  {language === 'da' ? 'Der er ingen events i den valgte periode' : language === 'de' ? 'Es gibt keine Veranstaltungen im ausgewählten Zeitraum' : language === 'nl' ? 'Er zijn geen evenementen in de geselecteerde periode' : 'There are no events in the selected period'}
+                </p>
+              </CardContent>
+            </Card>
+          ) : (
+            <div className="space-y-3">
+              {allEvents.map(event => (
                 <UnifiedEventCard key={event.id} event={event} />
-              ))
-            )}
-          </div>
+              ))}
+            </div>
+          )}
         </section>
 
       </div>
@@ -436,7 +417,7 @@ const GuestEvents = () => {
                           onClick={() => window.open(selectedEvent.event_url, '_blank')}
                         >
                           <ExternalLink className="h-4 w-4" />
-                          {language === 'da' ? 'Læs mere' : 'Read more'}
+                          {language === 'da' ? 'Læs mere' : language === 'de' ? 'Mehr lesen' : language === 'nl' ? 'Lees meer' : 'Read more'}
                         </Button>
                       )}
                       <Button 
@@ -444,7 +425,7 @@ const GuestEvents = () => {
                         onClick={() => window.open(getDirectionsUrl(selectedEvent.attraction_name || selectedEvent.location), '_blank')}
                       >
                         <Navigation className="h-4 w-4" />
-                        {language === 'da' ? 'Find vej' : 'Directions'}
+                        {language === 'da' ? 'Find vej' : language === 'de' ? 'Wegbeschreibung' : language === 'nl' ? 'Routebeschrijving' : 'Directions'}
                       </Button>
                     </>
                   )}

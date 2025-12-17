@@ -1,0 +1,106 @@
+homeassistant:
+  enabled: true
+availability:
+  enabled: true
+mqtt:
+  server: mqtt://mosquitto:1883
+  user: homeassistant
+  password: 7200Grindsted!
+  base_topic: zigbee2mqtt_3p
+  client_id: z2m_3p
+serial:
+  adapter: ember
+  port: tcp://192.168.0.242:6638
+  baudrate: 115200
+  rtscts: false
+onboarding: false
+advanced:
+  network_key:
+    - 177
+    - 135
+    - 187
+    - 102
+    - 84
+    - 189
+    - 167
+    - 215
+    - 200
+    - 20
+    - 10
+    - 228
+    - 85
+    - 142
+    - 225
+    - 241
+  channel: 15
+  transmit_power: 20
+  pan_id: 7777
+  ext_pan_id:
+    - 221
+    - 221
+    - 221
+    - 221
+    - 221
+    - 221
+    - 221
+    - 7
+  last_seen: ISO_8601
+  log_level: debug
+frontend:
+  enabled: true
+  port: 8080
+  title: 3 Fast Målere
+devices:
+  '0x781c9dfffe19b6bb':
+    friendly_name: 3faset-test
+  '0x781c9dfffe19ae1a':
+    friendly_name: Hytte 1
+  '0x781c9dfffe19829b':
+    friendly_name: Hytte 3
+  '0x781c9dfffe14dfc4':
+    friendly_name: Hytte 4
+  '0x781c9dfffe19bdc1':
+    friendly_name: Hytte 2
+  '0x142d41fffe93e5ec':
+    friendly_name: Hytte 5
+  '0x781c9dfffe18a631':
+    friendly_name: Hytte 6
+  '0x781c9dfffe18a8a3':
+    friendly_name: Hytte 7
+  '0x781c9dfffe1a0206':
+    friendly_name: Hytte 8
+  '0x781c9dfffe19c7f3':
+    friendly_name: Hytte 9
+  '0x781c9dfffe184091':
+    friendly_name: Hytte 10
+  '0x142d41fffe93de5d':
+    friendly_name: Hytte 11
+  '0x142d41fffe93ddb0':
+    friendly_name: Hytte 12
+  '0x781c9dfffe1a3258':
+    friendly_name: Hytte 20
+  '0x781c9dfffe17d818':
+    friendly_name: Hytte 19
+  '0x781c9dfffe1a4bc3':
+    friendly_name: Hytte 13
+  '0x142d41fffe93de52':
+    friendly_name: Hytte 14
+  '0x781c9dfffe18a63a':
+    friendly_name: Hytte 18
+  '0x781c9dfffe1382de':
+    friendly_name: Hytte 17
+  '0x781c9dfffe18bb11':
+    friendly_name: Hytte 16
+  '0x781c9dfffe1a238c':
+    friendly_name: Hytten 15
+  '0x781c9dfffe1885fe':
+    friendly_name: Hytte 25
+  '0x781c9dfffe199f27':
+    friendly_name: Hytte 24
+  '0x781c9dfffe184fe5':
+    friendly_name: Hytte 23
+  '0x781c9dfffe188c40':
+    friendly_name: Hytte 22
+  '0x781c9dfffe187f29':
+    friendly_name: Hytte 21
+version: 4

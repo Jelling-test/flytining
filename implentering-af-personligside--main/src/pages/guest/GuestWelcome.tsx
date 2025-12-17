@@ -252,7 +252,7 @@ const GuestWelcome = () => {
   };
 
   const formatDate = (date: Date) => {
-    const locale = language === 'da' ? 'da-DK' : language === 'de' ? 'de-DE' : 'en-GB';
+    const locale = language === 'da' ? 'da-DK' : language === 'de' ? 'de-DE' : language === 'nl' ? 'nl-NL' : 'en-GB';
     return date.toLocaleDateString(locale, { 
       day: 'numeric', 
       month: 'long'
@@ -269,6 +269,7 @@ const GuestWelcome = () => {
     if (isNotArrived) {
       return language === 'da' ? `Vi ser frem til din ankomst ${formatDate(arrivalDate)}` :
              language === 'de' ? `Wir freuen uns auf Ihre Ankunft am ${formatDate(arrivalDate)}` :
+             language === 'nl' ? `Wij kijken uit naar uw aankomst op ${formatDate(arrivalDate)}` :
              `We look forward to your arrival on ${formatDate(arrivalDate)}`;
     }
     if (isCheckedIn) {
@@ -277,6 +278,7 @@ const GuestWelcome = () => {
     if (isCheckedOut) {
       return language === 'da' ? 'Tak for dit ophold!' :
              language === 'de' ? 'Vielen Dank für Ihren Aufenthalt!' :
+             language === 'nl' ? 'Bedankt voor uw verblijf!' :
              'Thank you for your stay!';
     }
     return t('welcome');
@@ -285,7 +287,7 @@ const GuestWelcome = () => {
   const getStatusBadge = () => {
     if (isNotArrived) {
       return {
-        text: language === 'da' ? 'Ikke ankommet' : 'Not arrived',
+        text: language === 'da' ? 'Ikke ankommet' : language === 'de' ? 'Nicht angekommen' : language === 'nl' ? 'Niet aangekomen' : 'Not arrived',
         className: 'bg-orange-600 hover:bg-orange-700'
       };
     }
@@ -297,7 +299,7 @@ const GuestWelcome = () => {
     }
     if (isCheckedOut) {
       return {
-        text: language === 'da' ? 'Rejst' : 'Checked out',
+        text: language === 'da' ? 'Rejst' : language === 'de' ? 'Ausgecheckt' : language === 'nl' ? 'Uitgecheckt' : 'Checked out',
         className: 'bg-gray-600 hover:bg-gray-700'
       };
     }
@@ -348,7 +350,7 @@ const GuestWelcome = () => {
         {/* Content */}
         <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-10">
           <p className="text-white/80 text-sm sm:text-base tracking-widest uppercase mb-2">
-            {language === 'da' ? 'Velkommen til' : language === 'de' ? 'Willkommen bei' : 'Welcome to'}
+            {language === 'da' ? 'Velkommen til' : language === 'de' ? 'Willkommen bei' : language === 'nl' ? 'Welkom bij' : 'Welcome to'}
           </p>
           <h1 className="text-white text-4xl sm:text-6xl font-serif font-light mb-2">
             JELLING
@@ -419,20 +421,20 @@ const GuestWelcome = () => {
           {weatherLoading ? (
             <div className="flex items-center gap-2 text-gray-500">
               <Loader2 className="h-5 w-5 animate-spin" />
-              <span className="text-sm">{language === 'da' ? 'Henter vejr...' : 'Loading weather...'}</span>
+              <span className="text-sm">{language === 'da' ? 'Henter vejr...' : language === 'de' ? 'Wetter wird geladen...' : language === 'nl' ? 'Weer laden...' : 'Loading weather...'}</span>
             </div>
           ) : weather ? (
             <>
               {weather.days.map((day, index) => {
                 const WeatherIcon = getWeatherIcon(day.symbol);
                 const getDayLabel = (label: string) => {
-                  if (label === 'today') return language === 'da' ? 'I dag' : language === 'de' ? 'Heute' : 'Today';
-                  if (label === 'tomorrow') return language === 'da' ? 'I morgen' : language === 'de' ? 'Morgen' : 'Tomorrow';
+                  if (label === 'today') return language === 'da' ? 'I dag' : language === 'de' ? 'Heute' : language === 'nl' ? 'Vandaag' : 'Today';
+                  if (label === 'tomorrow') return language === 'da' ? 'I morgen' : language === 'de' ? 'Morgen' : language === 'nl' ? 'Morgen' : 'Tomorrow';
                   // For dag 2 og 3, vis ugedag
                   const date = new Date();
                   date.setDate(date.getDate() + index);
                   return date.toLocaleDateString(
-                    language === 'da' ? 'da-DK' : language === 'de' ? 'de-DE' : 'en-GB',
+                    language === 'da' ? 'da-DK' : language === 'de' ? 'de-DE' : language === 'nl' ? 'nl-NL' : 'en-GB',
                     { weekday: 'short' }
                   );
                 };
@@ -490,10 +492,10 @@ const GuestWelcome = () => {
                   </span>
                   <span className="text-sm sm:text-base text-gray-600 mt-1 font-medium">
                     {daysUntilArrival === 0 
-                      ? (language === 'da' ? 'I dag er dagen!' : 'Today is the day!')
+                      ? (language === 'da' ? 'I dag er dagen!' : language === 'de' ? 'Heute ist der Tag!' : language === 'nl' ? 'Vandaag is de dag!' : 'Today is the day!')
                       : daysUntilArrival === 1 
-                        ? (language === 'da' ? 'dag' : language === 'de' ? 'Tag' : 'day')
-                        : (language === 'da' ? 'dage' : language === 'de' ? 'Tage' : 'days')}
+                        ? (language === 'da' ? 'dag' : language === 'de' ? 'Tag' : language === 'nl' ? 'dag' : 'day')
+                        : (language === 'da' ? 'dage' : language === 'de' ? 'Tage' : language === 'nl' ? 'dagen' : 'days')}
                   </span>
                 </div>
                 
@@ -514,9 +516,9 @@ const GuestWelcome = () => {
         <div className="max-w-6xl mx-auto">
           {!isCheckedOut && (
             <h2 className="text-2xl font-serif text-gray-800 mb-6 text-center">
-              {isNotArrived ? (language === 'da' ? 'Forbered dit ophold' : 'Prepare your stay') :
-               isCheckedIn ? (language === 'da' ? 'Dit ophold' : 'Your stay') :
-               (language === 'da' ? 'Information' : 'Information')}
+              {isNotArrived ? (language === 'da' ? 'Forbered dit ophold' : language === 'de' ? 'Bereiten Sie Ihren Aufenthalt vor' : language === 'nl' ? 'Bereid uw verblijf voor' : 'Prepare your stay') :
+               isCheckedIn ? (language === 'da' ? 'Dit ophold' : language === 'de' ? 'Ihr Aufenthalt' : language === 'nl' ? 'Uw verblijf' : 'Your stay') :
+               (language === 'da' ? 'Information' : language === 'de' ? 'Information' : language === 'nl' ? 'Informatie' : 'Information')}
             </h2>
           )}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -548,7 +550,7 @@ const GuestWelcome = () => {
                     size="sm"
                     className="w-fit bg-transparent border-white text-white hover:bg-white hover:text-gray-900 transition-colors"
                   >
-                    {language === 'da' ? 'Se mere' : 'View'}
+                    {language === 'da' ? 'Se mere' : language === 'de' ? 'Ansehen' : language === 'nl' ? 'Bekijken' : 'View'}
                     <ChevronRight className="h-4 w-4 ml-1" />
                   </Button>
                 </div>
@@ -571,21 +573,19 @@ const GuestWelcome = () => {
             {isCheckedOut ? 
               (language === 'da' ? 'Vi ses igen!' : 
                language === 'de' ? 'Wir sehen uns wieder!' :
+               language === 'nl' ? 'Tot ziens!' :
                'See you again!') :
               (language === 'da' ? 'Vi glæder os til at gøre dit ophold uforglemmelig' : 
                language === 'de' ? 'Wir freuen uns, Ihren Aufenthalt unvergesslich zu machen' :
+               language === 'nl' ? 'Wij kijken ernaar uit om uw verblijf onvergetelijk te maken' :
                'We look forward to making your stay unforgettable')
             }
           </h2>
           <p className="text-white/80 text-sm">
-            {isNotArrived ? 
-              (language === 'da' ? 'Receptionen er åben alle dage 08.00 - 20.00' :
-               language === 'de' ? 'Rezeption geöffnet täglich 08.00 - 20.00' :
-               'Reception open daily 08.00 - 20.00') :
-              (language === 'da' ? 'Receptionen er åben alle dage 08.00 - 20.00' :
-               language === 'de' ? 'Rezeption geöffnet täglich 08.00 - 20.00' :
-               'Reception open daily 08.00 - 20.00')
-            }
+            {language === 'da' ? 'Receptionen er åben alle dage 08.00 - 20.00' :
+             language === 'de' ? 'Rezeption geöffnet täglich 08.00 - 20.00' :
+             language === 'nl' ? 'Receptie geopend dagelijks 08.00 - 20.00' :
+             'Reception open daily 08.00 - 20.00'}
           </p>
         </div>
       </div>
