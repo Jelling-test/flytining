@@ -1941,8 +1941,11 @@ const AdminKunder = ({ isStaffView = false }: AdminKunderProps = {}) => {
                       // Beregn total forbrug med accumulated_usage fra ALLE pakker
                       const accumulated = activePakker.reduce((sum: number, p: any) => 
                         sum + parseFloat(p.data?.accumulated_usage || '0'), 0);
-                      // Option D: Brug pakke_start_energy KUN hvis > 0, ellers meter_start_energy
-                      const pakkeStartRaw = activePakker[0]?.data?.pakke_start_energy;
+                      // FIX: Brug ÆLDSTE pakkes start_energy, ikke første i array
+                      const oldestPakke = [...activePakker].sort((a: any, b: any) => 
+                        new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
+                      )[0];
+                      const pakkeStartRaw = oldestPakke?.data?.pakke_start_energy;
                       const pakkeStart = (pakkeStartRaw !== null && pakkeStartRaw !== undefined && pakkeStartRaw > 0)
                         ? pakkeStartRaw
                         : parseFloat(selectedCustomer?.data.meter_start_energy || '0');
